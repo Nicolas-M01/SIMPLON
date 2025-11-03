@@ -4,7 +4,7 @@
 ## DAT (document d'architecture technique)  
 
 ## :large_blue_circle: Schéma réseau, incluant les VM, l'Hyperviseur et les switchs virtuels  
-👉 [Schéma réseau](scema.png)
+👉 [Schéma réseau](schemalab.png)
 
 
 
