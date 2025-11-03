@@ -41,30 +41,35 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
 11. Comment mettre en place la confidentialité et l'authenticité pour HTTP ?  
 🔹
 12. Qu’est-ce qu’une `PKI` ?  
+🔹`Public Key Infrastructure` : Infrastructure à clés publiques. Elle inclut les politiques, les rôles, le matériel, les logiciels et les procédures nécessaires pour créer, gérer, distribuer, utiliser, stocker et révoquer les certificats numériques. Basé sur de la crypto asymétrique (clé publique/clé privée)  
+Chaque entité (utilisateurs, serveurs, appareils,... ) a une clé publique et une clé privée. Le chiffrement est fait avec la clé publique connue des 2 parties et ne peut être déchiffré qu'avec la clé privée.  
+La PKI permet d'assurer : identité, authenticité, intégrité, confidentialité.  
+
+
+
+1.  Capturer un `mot de passe` HTTP via le projet VulnerableLightApp.  
 🔹
-13. Capturer un `mot de passe` HTTP via le projet VulnerableLightApp.  
+1.  Comment mettre en place la `confidentialité` pour ce service ?  
 🔹
-14. Comment mettre en place la `confidentialité` pour ce service ?  
+1.  Capturer un `handshake TLS`  
 🔹
-15. Capturer un `handshake TLS`  
+1.  Qu’est-ce qu’une autorité de certification (`AC`) racine ? Qu'est qu'une `AC intermediaire` ?  
 🔹
-16. Qu’est-ce qu’une autorité de certification (`AC`) racine ? Qu'est qu'une `AC intermediaire` ?  
+1.  Connectez-vous sur `taisen.fr` et affichez la `chaine de confiance` du certificat  
 🔹
-17. Connectez-vous sur `taisen.fr` et affichez la `chaine de confiance` du certificat  
+1.  Capturer une authentification `Kerberos` (mettre en place le service si nécessaire), identifier l'`AS_REQ`, `AS_REP` et les messages suivants.  
 🔹
-18. Capturer une authentification `Kerberos` (mettre en place le service si nécessaire), identifier l'`AS_REQ`, `AS_REP` et les messages suivants.  
+1.  Capturer une `authentification RDP` (mettre en place le service si nécessaire), quel est le protocole d'authentification capturé ?  
 🔹
-19. Capturer une `authentification RDP` (mettre en place le service si nécessaire), quel est le protocole d'authentification capturé ?  
+1.  Quelles sont les attaques connues sur `NetLM` ?  
 🔹
-20. Quelles sont les attaques connues sur `NetLM` ?  
+1.  Capturer une `authentification WinRM` (Vous pouvez utiliser EvilWinRM si nécessaire côté client.), quel est le protocole d'authentification capturé ?  
 🔹
-21. Capturer une `authentification WinRM` (Vous pouvez utiliser EvilWinRM si nécessaire côté client.), quel est le protocole d'authentification capturé ?  
+1.  Capturer une `authentification SSH` ou SFTP (mettre en place le service si nécessaire)  
 🔹
-22. Capturer une `authentification SSH` ou SFTP (mettre en place le service si nécessaire)  
+1.  Intercepter un `fichier au travers du protocole SMB`  
 🔹
-23. Intercepter un `fichier au travers du protocole SMB`  
-🔹
-24. Comment proteger l'`authenticité` et la `confidentialité` d'un partage SMB ?  
+1.  Comment proteger l'`authenticité` et la `confidentialité` d'un partage SMB ?  
 🔹
 > [!TIP]
 > Bonus : **Déchiffrer le traffic TLS** en important la clé privée du certificat dans Wireshark et **reconstituer le fichier** qui à transité sur le réseau à l'aide de Wireshark  
