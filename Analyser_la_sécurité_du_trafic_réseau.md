@@ -41,7 +41,7 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
 11. Comment mettre en place la confidentialité et l'authenticité pour HTTP ?  
 🔹
 12. Qu’est-ce qu’une `PKI` ?  
-🔹`Public Key Infrastructure` : Infrastructure à clés publiques. Elle inclut les politiques, les rôles, le matériel, les logiciels et les procédures nécessaires pour créer, gérer, distribuer, utiliser, stocker et révoquer les certificats numériques. Basé sur de la crypto asymétrique (clé publique/clé privée)  
+🔹`Public Key Infrastructure` : Infrastructure à clés publiques. Elle inclut les politiques, les rôles, le matériel, les logiciels et les procédures nécessaires pour créer, gérer, distribuer, utiliser, stocker et révoquer les certificats numériques. Basé sur de la crypto asymétrique (clé publique/clé privée).  
 Chaque entité (utilisateurs, serveurs, appareils,... ) a une clé publique et une clé privée. Le chiffrement est fait avec la clé publique connue des 2 parties et ne peut être déchiffré qu'avec la clé privée.  
 La PKI permet d'assurer : identité, authenticité, intégrité, confidentialité.  
 
