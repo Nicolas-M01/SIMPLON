@@ -17,34 +17,43 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
 ### Questions  
 
 0. Quels sont les `flags TCP` ?  
-🔹
+🔹 Il existe 8 flags en TCP  
+`SYN` : Utilisé pour initier une communication TCP (un client souhaite se connecter à un serveur)  
+`ACK` : Sert à accuser réception d'un paquet reçu. (Du client au serveur puis lui dire "Ok on peut communiquer", ce paquet suit un `SYN+ACK` du serveur vers le client pour dire "Ok j'ai reçu ta demande, je suis prêt")  
+    > 💡Les 3 principaux flags TCP utilisés pour le "3 way handshake" sont :  `SYN` puis `SYN+ACK` puis `ACK` et la connection est établie.  
+
+    `FIN` : Fin de connection. L'une des 2 machines envoie ce flag pour stopper la communication. S'en suit un `ACK` par l'autre machine, puis un `FIN` et le premier répond avec `ACK` et la connection est fermée.  
+    `RST` : Reset, en cas d'erreur sert à couper brutalement la connection (paquet innatendu, port non ouvert, appli qui plante).  
+    `PSH` : Ordonne à la pile TCP d' envoyer immédiatement les données mises en mémoire tampon à l'application au lieu d'attendre que la mémoire tampon soit pleine  
+    `URG` : Signale que les données du segment sont urgentes et doivent être traitées avant les autres segments en file d'attente.  
+   
+
 1. Capturer le processus `DORA` du protocole DHCP  
 🔹
-2. qu’est ce que le `DHCP Starvation` / `snooping` ? `Rogue DHCP` ?  
+1. qu’est ce que le `DHCP Starvation` / `snooping` ? `Rogue DHCP` ?  
 🔹
-3. Que ce passe-t-il lors de l'execution de la commande `ipconfig /release` (windows) ? D’un point de vue sécurité quel peut etre l'enjeu ?  
+1. Que ce passe-t-il lors de l'execution de la commande `ipconfig /release` (windows) ? D’un point de vue sécurité quel peut etre l'enjeu ?  
 🔹
-4. Quelle fonctionnalité propose CISCO pour se prémunir des `attaques DHCP` ?  
+1. Quelle fonctionnalité propose CISCO pour se prémunir des `attaques DHCP` ?  
 🔹
-5. Capturer une `requête DNS` et sa réponse  
+1. Capturer une `requête DNS` et sa réponse  
 🔹
-6. Qu’est-ce que le `DNS Spoofing` ? Comment s’en protéger ?  
+1. Qu’est-ce que le `DNS Spoofing` ? Comment s’en protéger ?  
 🔹
-7. Qu’est-ce que `DNSSec` ? `DNS over TLS` ou `DNS over HTTPS` ?  
+1. Qu’est-ce que `DNSSec` ? `DNS over TLS` ou `DNS over HTTPS` ?  
 🔹
-8. Dans quels cas trouve-t-on du DNS sur TCP ?  
+1. Dans quels cas trouve-t-on du DNS sur TCP ?  
 🔹
-9. Capturer un flux `HTTP`  
+1. Capturer un flux `HTTP`  
 🔹
-10. Qu’est-ce que le `HTTP Smuggling` ? Donner un exemple de `CVE`  
+1.  Qu’est-ce que le `HTTP Smuggling` ? Donner un exemple de `CVE`  
 🔹
-11. Comment mettre en place la confidentialité et l'authenticité pour HTTP ?  
+1.  Comment mettre en place la confidentialité et l'authenticité pour HTTP ?  
 🔹
-12. Qu’est-ce qu’une `PKI` ?  
+1.  Qu’est-ce qu’une `PKI` ?  
 🔹`Public Key Infrastructure` : Infrastructure à clés publiques. Elle inclut les politiques, les rôles, le matériel, les logiciels et les procédures nécessaires pour créer, gérer, distribuer, utiliser, stocker et révoquer les certificats numériques. Basé sur de la crypto asymétrique (clé publique/clé privée).  
 Chaque entité (utilisateurs, serveurs, appareils,... ) a une clé publique et une clé privée. Le chiffrement est fait avec la clé publique connue des 2 parties et ne peut être déchiffré qu'avec la clé privée.  
 La PKI permet d'assurer : identité, authenticité, intégrité, confidentialité.  
-
 
 
 1.  Capturer un `mot de passe` HTTP via le projet VulnerableLightApp.  
