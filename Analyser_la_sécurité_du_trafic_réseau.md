@@ -28,10 +28,16 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
     `URG` : Signale que les données du segment sont urgentes et doivent être traitées avant les autres segments en file d'attente.  
    
 
-1. Capturer le processus `DORA` du protocole DHCP  
+1. Capturer le processus `DORA` du protocole DHCP 
 🔹
-1. qu’est ce que le `DHCP Starvation` / `snooping` ? `Rogue DHCP` ?  
-🔹
+2. qu’est ce que le `DHCP Starvation` / `snooping` ? `Rogue DHCP` ?  
+🔹 `DHCP Starvation` : signifie "famine" en anglais. Le principe est qu'un attaquant s'introduise sur un réseau LAN pour épuiser toutes les adresses attribuables du serveur DHCP officiel en envoyant massivement des requêtes : DHCPDISCOVER / DHCPREQUEST.  
+Les nouveaux appareils légitimes ne peuvent plus obtenir d’adresse IP → perte de connectivité réseau.  
+`snooping` : Sécurité réseau, filtre les messages DHCP sur un switch pour contrôler quels ports peuvent servir de serveur DHCP et quels ports ne le peuvent pas. Les ports fiables ("trusted") : là où se trouve le vrai serveur DHCP. Les ports non fiables ("untrusted") : ports clients, où les appareils normaux demandent une IP.  
+`Rogue DHCP` : C'est un faux serveur DHCP qui va founrir les IP avec comme passerelle par défaut, l'adresse de l'attaquant ce qui lui permet par exemple de récupérer/observer le trafice réseau.  
+
+Ce dernier va ensuite installer un serveur DHCP malveillant pour attribuer des adresses IP avec son adresse IP comme passerelle par défaut. Sur le PC de l'attaquant, le routage est activé
+
 1. Que ce passe-t-il lors de l'execution de la commande `ipconfig /release` (windows) ? D’un point de vue sécurité quel peut etre l'enjeu ?  
 🔹
 1. Quelle fonctionnalité propose CISCO pour se prémunir des `attaques DHCP` ?  
