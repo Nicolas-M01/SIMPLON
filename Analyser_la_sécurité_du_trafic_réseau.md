@@ -79,14 +79,17 @@ La PKI permet d'assurer : identité, authenticité, intégrité, confidentialit�
 **19.   Capturer une `authentification RDP` (mettre en place le service si nécessaire), quel est le protocole d'authentification capturé ?**  
 🔹
 **20.   Quelles sont les attaques connues sur `NetLM` ?**  
-🔹
+🔹 
+
 **21.   Capturer une `authentification WinRM` (Vous pouvez utiliser EvilWinRM si nécessaire côté client.), quel est le protocole d'authentification capturé ?**  
-🔹
+🔹  
+
 **22.   Capturer une `authentification SSH` ou SFTP (mettre en place le service si nécessaire)**  
-🔹
+🔹  
+
 **23.   Intercepter un `fichier au travers du protocole SMB`**  
-🔹
+🔹  
 **24.   Comment proteger l'`authenticité` et la `confidentialité` d'un partage SMB ?**  
-🔹
+🔹  
 > [!TIP]
 > Bonus : **Déchiffrer le traffic TLS** en important la clé privée du certificat dans Wireshark et **reconstituer le fichier** qui à transité sur le réseau à l'aide de Wireshark  
