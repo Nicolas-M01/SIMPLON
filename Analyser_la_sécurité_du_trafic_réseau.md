@@ -28,7 +28,7 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
     `URG` : Signale que les données du segment sont urgentes et doivent être traitées avant les autres segments en file d'attente.  
    
 
-**1. Capturer le processus `DORA` du protocole DHCP** 
+**1. Capturer le processus `DORA` du protocole DHCP**  
 🔹
 **2. qu’est ce que le `DHCP Starvation` / `snooping` ? `Rogue DHCP` ?**  
 🔹 `DHCP Starvation` : signifie "famine" en anglais. Le principe est qu'un attaquant s'introduise sur un réseau LAN pour épuiser toutes les adresses attribuables du serveur DHCP officiel en envoyant massivement des requêtes : DHCPDISCOVER / DHCPREQUEST.  
