@@ -20,9 +20,11 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
 🔹 Il existe 8 flags en TCP  
 `SYN` : Utilisé pour initier une communication TCP (un client souhaite se connecter à un serveur)  
 `ACK` : Sert à accuser réception d'un paquet reçu. (Du client au serveur puis lui dire "Ok on peut communiquer", ce paquet suit un `SYN+ACK` du serveur vers le client pour dire "Ok j'ai reçu ta demande, je suis prêt")  
+
     > 💡Les 3 principaux flags TCP utilisés pour le "3 way handshake" sont :  `SYN` puis `SYN+ACK` puis `ACK` et la connection est établie.  
 
-    `FIN` : Fin de connection. L'une des 2 machines envoie ce flag pour stopper la communication. S'en suit un `ACK` par l'autre machine, puis un `FIN` et le premier répond avec `ACK` et la connection est fermée.  
+
+ `FIN` : Fin de connection. L'une des 2 machines envoie ce flag pour stopper la communication. S'en suit un `ACK` par l'autre machine, puis un `FIN` et le premier répond avec `ACK` et la connection est fermée.  
     `RST` : Reset, en cas d'erreur sert à couper brutalement la connection (paquet innatendu, port non ouvert, appli qui plante).  
     `PSH` : Ordonne à la pile TCP d' envoyer immédiatement les données mises en mémoire tampon à l'application au lieu d'attendre que la mémoire tampon soit pleine  
     `URG` : Signale que les données du segment sont urgentes et doivent être traitées avant les autres segments en file d'attente.  
