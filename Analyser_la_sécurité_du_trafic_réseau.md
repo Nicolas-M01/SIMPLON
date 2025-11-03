@@ -3,15 +3,15 @@
 
 Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le réseau et de détecter d'éventuelles faiblesses.
 
-à partir du Lab installé, ajouter les services nécessaires et répondre aux questions suivantes
+à partir du Lab installé, ajouter les services nécessaires et répondre aux questions suivantes  
 
-### Rappels
+### Rappels  
 
 * Quelle est votre adresse IP ? Quelle est sa classe (IPv4) ?  
 🔹 
-* Quel est votre masque de sous-réseau ?
+* Quel est votre masque de sous-réseau ?  
 🔹
-* Quelle est l'adresse de votre passerelle ?
+* Quelle est l'adresse de votre passerelle ?  
 🔹
 
 ### Questions  
@@ -67,4 +67,4 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
 24. Comment proteger l'`authenticité` et la `confidentialité` d'un partage SMB ?  
 🔹
 > [!TIP]
-> Bonus : **Déchiffrer le traffic TLS** en important la clé privée du certificat dans Wireshark et **reconstituer le fichier** qui à transité sur le réseau à l'aide de Wireshark
+> Bonus : **Déchiffrer le traffic TLS** en important la clé privée du certificat dans Wireshark et **reconstituer le fichier** qui à transité sur le réseau à l'aide de Wireshark  
