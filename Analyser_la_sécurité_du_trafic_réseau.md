@@ -157,7 +157,10 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **18.   Capturer une authentification `Kerberos` (mettre en place le service si nécessaire), identifier l'`AS_REQ`, `AS_REP` et les messages suivants.**  
-🔹
+🔹Je vérifie que Kerberos est bien en écoute sur le serveur Windows :  
+![alt text](<Capture d’écran 2025-11-04 201038.png>)  
+🔹Puis je démarre une machine windows sur le domaine.  
+![alt text](<Capture d'écran 2025-11-04 203400.png>)  
 
 ---
 
