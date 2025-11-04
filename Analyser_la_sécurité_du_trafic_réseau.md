@@ -95,7 +95,7 @@ De nombreux navigateurs (comme Firefox, Chrome, Edge) prennent en charge DoH dir
 ---
 
 **8. Dans quels cas trouve-t-on du DNS sur TCP ?**  
-🔹
+🔹DNS est généralement en UDP port 53, mais il utilise TCP port 53 lorsque les réponses dépassent 512 octets.  
 
 ---
 
@@ -105,20 +105,28 @@ De nombreux navigateurs (comme Firefox, Chrome, Edge) prennent en charge DoH dir
 ---
 
 **10. Qu’est-ce que le `HTTP Smuggling` ? Donner un exemple de `CVE`**  
-🔹
+🔹C'est une technique d'attaque Web, où un attaquant injecte des requêtes HTTP malformées pour jouer sur les différences d'interprétation entre serveurs ou proxies. CVE‑2022‑26377 — Apache HTTP Server  
 
 ---
 
-**11.  Comment mettre en place la confidentialité et l'authenticité pour HTTP ?**  
-🔹
+**11. Comment mettre en place la confidentialité et l'authenticité pour HTTP ?**  
+🔹Il faut activer HTTPS (TLS), cela permettra de chiffrer les données entre le client et le serveur (confidentialité). Pour cela il faut installer un certificat SSL/TLS sur le serveur web. ça force toutes les connections en HTTPS.  
+Il faut ensuite s'assurer que le serveur est authentique : Utiliser un certificat signé par une authorité reconnue (Let's Encrypt ou PKI interne). Le client pourra prétendre que le serveur est bien celui qu'il prétend être (Authenticité).  
+
+---
+
 **12.  Qu’est-ce qu’une `PKI` ?**  
 🔹`Public Key Infrastructure` : Infrastructure à clés publiques. Elle inclut les politiques, les rôles, le matériel, les logiciels et les procédures nécessaires pour créer, gérer, distribuer, utiliser, stocker et révoquer les certificats numériques. Basé sur de la crypto asymétrique (clé publique/clé privée).  
 Chaque entité (utilisateurs, serveurs, appareils,... ) a une clé publique et une clé privée. Le chiffrement est fait avec la clé publique connue des 2 parties et ne peut être déchiffré qu'avec la clé privée.  
 La PKI permet d'assurer : identité, authenticité, intégrité, confidentialité.  
 
+---
 
 **13. Capturer un `mot de passe` HTTP via le projet VulnerableLightApp.**  
 🔹
+
+---
+
 **14.   Comment mettre en place la `confidentialité` pour ce service ?**  
 🔹
 **15.   Capturer un `handshake TLS`**  
