@@ -52,7 +52,7 @@ Ce dernier va ensuite installer un serveur DHCP malveillant pour attribuer des a
 🔹Je lance une résolution de nom DNS sur une machine cliente du domaine :  
 ![alt text](<Capture d'écran 2025-11-04 095856.png>)  
 Je lance une capture en filtrant avec "dns" sur mon serveur :  
-![alt text](image.png)  
+![alt text](<Capture d'écran 2025-11-04 100639.png>)
 **6. Qu’est-ce que le `DNS Spoofing` ? Comment s’en protéger ?**  
 🔹C'est une ataque par usurpation. Le but est de remplacer les adresses de serveurs DNS légitimes par de fausses adresses DNS dans le but de renvoyer l'utilisateur vers un site frauduleux. C'est généralement une attaque MITM (mais peut être une attaque de redirection).  
 
