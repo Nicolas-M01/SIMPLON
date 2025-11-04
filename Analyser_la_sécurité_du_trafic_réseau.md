@@ -31,7 +31,7 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
    
 
 **1. Capturer le processus `DORA` du protocole DHCP**  
-🔹Ma machine cliente windows est en DHCP et un serveur DHCP est installé sur mon serveur Windows. je réalise un `ipconfig /release` pour libérer l'adresse IP, pusi un `ipconfig /renew` pour qu'il recherche une nouvelle IP grâce au serveur DHCP.  
+🔹Ma machine cliente windows est en DHCP et un serveur DHCP est installé sur mon serveur Windows. je réalise un `ipconfig /release` pour libérer l'adresse IP, pusi un `ipconfig /renew` pour qu'il recherche une nouvelle IP grâce au serveur DHCP. En filtrant par "dhcp"  
 ![alt text](<Capture d'écran 2025-11-04 094302.png>)  
 
 **2. qu’est ce que le `DHCP Starvation` / `snooping` ? `Rogue DHCP` ?**  
@@ -46,9 +46,13 @@ Ce dernier va ensuite installer un serveur DHCP malveillant pour attribuer des a
 🔹Ce qui est bien avec cette commande avec cette option, c'est qu'on libère officiellement l'adresse IP. Le serveur DHCP peut donc la réattribuer à une autre machine. Ce qui limite la saturation du pool d'IP.  
 
 **4. Quelle fonctionnalité propose CISCO pour se prémunir des `attaques DHCP` ?**  
-🔹
+🔹Le ``DHCP snooping`` : Il autorise uniquement les réponses DHCP (DHCPOFFER, DHCPACK, etc.) venant de ports de confiance (trusted). Les ports non fiables (untrusted) ne peuvent pas agir comme serveurs DHCP.  
+
 **5. Capturer une `requête DNS` et sa réponse**  
-🔹
+🔹Je lance une résolution de nom DNS sur une machine cliente du domaine :  
+![alt text](<Capture d'écran 2025-11-04 095856.png>)  
+Je lance une capture en filtrant avec "dns" sur mon serveur :  
+![alt text](image.png)  
 **6. Qu’est-ce que le `DNS Spoofing` ? Comment s’en protéger ?**  
 🔹C'est une ataque par usurpation. Le but est de remplacer les adresses de serveurs DNS légitimes par de fausses adresses DNS dans le but de renvoyer l'utilisateur vers un site frauduleux. C'est généralement une attaque MITM (mais peut être une attaque de redirection).  
 
