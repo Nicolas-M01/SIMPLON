@@ -8,16 +8,16 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
 ### Rappels  
 
 * Quelle est votre adresse IP ? Quelle est sa classe (IPv4) ?  
-🔹 
+🔹 192.168.0.253  
 * Quel est votre masque de sous-réseau ?  
-🔹
+🔹masque sous réseau 255.255.255.0 / CIDR: 24  
 * Quelle est l'adresse de votre passerelle ?  
-🔹
+🔹Aucune je suis en réseau interne isolé.  
 
 ### Questions  
 
 **0. Quels sont les `flags TCP` ?**  
-🔹 Il existe 8 flags en TCP  
+🔹 Il existe 6 flags en TCP  
 `SYN` : Utilisé pour initier une communication TCP (un client souhaite se connecter à un serveur)  
 `ACK` : Sert à accuser réception d'un paquet reçu. (Du client au serveur puis lui dire "Ok on peut communiquer", ce paquet suit un `SYN+ACK` du serveur vers le client pour dire "Ok j'ai reçu ta demande, je suis prêt")  
 
@@ -31,7 +31,9 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
    
 
 **1. Capturer le processus `DORA` du protocole DHCP**  
-🔹
+🔹Ma machine cliente windows est en DHCP et un serveur DHCP est installé sur mon serveur Windows. je réalise un `ipconfig /release` pour libérer l'adresse IP, pusi un `ipconfig /renew` pour qu'il recherche une nouvelle IP grâce au serveur DHCP.  
+![alt text](<Capture d'écran 2025-11-04 094302.png>)  
+
 **2. qu’est ce que le `DHCP Starvation` / `snooping` ? `Rogue DHCP` ?**  
 🔹 `DHCP Starvation` : signifie "famine" en anglais. Le principe est qu'un attaquant s'introduise sur un réseau LAN pour épuiser toutes les adresses attribuables du serveur DHCP officiel en envoyant massivement des requêtes : DHCPDISCOVER / DHCPREQUEST.  
 Les nouveaux appareils légitimes ne peuvent plus obtenir d’adresse IP → perte de connectivité réseau.  
