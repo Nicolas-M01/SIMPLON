@@ -29,10 +29,13 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
     `PSH` : Ordonne à la pile TCP d' envoyer immédiatement les données mises en mémoire tampon à l'application au lieu d'attendre que la mémoire tampon soit pleine  
     `URG` : Signale que les données du segment sont urgentes et doivent être traitées avant les autres segments en file d'attente.  
    
+---
 
 **1. Capturer le processus `DORA` du protocole DHCP**  
 🔹Ma machine cliente windows est en DHCP et un serveur DHCP est installé sur mon serveur Windows. je réalise un `ipconfig /release` pour libérer l'adresse IP, pusi un `ipconfig /renew` pour qu'il recherche une nouvelle IP grâce au serveur DHCP. En filtrant par "dhcp"  
 ![alt text](<Capture d'écran 2025-11-04 094302.png>)  
+
+---
 
 **2. qu’est ce que le `DHCP Starvation` / `snooping` ? `Rogue DHCP` ?**  
 🔹 `DHCP Starvation` : signifie "famine" en anglais. Le principe est qu'un attaquant s'introduise sur un réseau LAN pour épuiser toutes les adresses attribuables du serveur DHCP officiel en envoyant massivement des requêtes : DHCPDISCOVER / DHCPREQUEST.  
@@ -42,22 +45,58 @@ Les nouveaux appareils légitimes ne peuvent plus obtenir d’adresse IP → per
 
 Ce dernier va ensuite installer un serveur DHCP malveillant pour attribuer des adresses IP avec son adresse IP comme passerelle par défaut. Sur le PC de l'attaquant, le routage est activé
 
+---
+
 **3. Que ce passe-t-il lors de l'execution de la commande `ipconfig /release` (windows) ? D’un point de vue sécurité quel peut etre l'enjeu ?**  
 🔹Ce qui est bien avec cette commande avec cette option, c'est qu'on libère officiellement l'adresse IP. Le serveur DHCP peut donc la réattribuer à une autre machine. Ce qui limite la saturation du pool d'IP.  
 
+---
+
 **4. Quelle fonctionnalité propose CISCO pour se prémunir des `attaques DHCP` ?**  
 🔹Le ``DHCP snooping`` : Il autorise uniquement les réponses DHCP (DHCPOFFER, DHCPACK, etc.) venant de ports de confiance (trusted). Les ports non fiables (untrusted) ne peuvent pas agir comme serveurs DHCP.  
+
+---
 
 **5. Capturer une `requête DNS` et sa réponse**  
 🔹Je lance une résolution de nom DNS sur une machine cliente du domaine :  
 ![alt text](<Capture d'écran 2025-11-04 095856.png>)  
 Je lance une capture en filtrant avec "dns" sur mon serveur :  
-![alt text](<Capture d'écran 2025-11-04 100639.png>)
+![alt text](<Capture d'écran 2025-11-04 100639.png>)  
+
+---
+
 **6. Qu’est-ce que le `DNS Spoofing` ? Comment s’en protéger ?**  
 🔹C'est une ataque par usurpation. Le but est de remplacer les adresses de serveurs DNS légitimes par de fausses adresses DNS dans le but de renvoyer l'utilisateur vers un site frauduleux. C'est généralement une attaque MITM (mais peut être une attaque de redirection).  
 
+---
+
 **7. Qu’est-ce que `DNSSec` ? `DNS over TLS` ou `DNS over HTTPS` ?**  
-🔹
+🔹`DNSSec` : Sert à assurer l’intégrité et l’authenticité des données DNS. DNSSEC ne chiffre pas les requêtes DNS.  
+Il ajoute une signature numérique aux enregistrements DNS (avec des clés publiques/privées).  
+Cela permet au résolveur DNS (celui qui interroge les serveurs) de vérifier que la réponse vient bien du bon serveur et n’a pas été modifiée.  
+✅ Garantit l’intégrité et l’authenticité des données DNS  
+❌ Ne protège pas la confidentialité (les requêtes restent visibles)  
+
+🔹`DNS over TLS` : Sert à chiffrer la communication DNS entre le client et le résolveur.  
+Utilise le protocole TLS (Transport Layer Security), le même que pour HTTPS.  
+Les requêtes DNS passent par le port 853 (spécifique à DoT).  
+Ainsi, personne entre vous et le résolveur (comme un FAI) ne peut voir ou modifier vos requêtes.  
+✅ Protège la confidentialité et l’intégrité du canal DNS  
+❌ Ne vérifie pas si la réponse est authentique (sauf si combiné avec DNSSEC)  
+
+🔹`DNS over HTTPS` : Sert à chiffrer la communication DNS via le protocole HTTPS.  
+Les requêtes DNS sont envoyées dans des requêtes HTTPS classiques (port 443).  
+Cela rend le trafic DNS indiscernable du reste du trafic web, donc plus difficile à bloquer ou surveiller.  
+De nombreux navigateurs (comme Firefox, Chrome, Edge) prennent en charge DoH directement.  
+✅ Chiffre les requêtes DNS  
+✅ Se fond dans le trafic HTTPS (difficile à filtrer)  
+❌ Peut centraliser les requêtes chez un seul fournisseur (ex. Cloudflare, Google)  
+
+
+
+
+---
+
 **8. Dans quels cas trouve-t-on du DNS sur TCP ?**  
 🔹
 **9. Capturer un flux `HTTP`**  
