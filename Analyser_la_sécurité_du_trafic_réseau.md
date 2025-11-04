@@ -142,7 +142,12 @@ Il faut fermer tous les onglets pour pouvoir réinitialiser un handshake TLS.
 ---
 
 **16.   Qu’est-ce qu’une autorité de certification (`AC`) racine ? Qu'est qu'une `AC intermediaire` ?**  
-🔹
+🔹Une autorité de certification (AC) est une entreprise ou une entité autorisée par les navigateurs à émettre des certificats TLS/SSL et d’autres formes de certificats. C'est un tiers de confiance qui agit pour la sécurisation des communications sur le net. Les AC sont également appelées autorités de certification PKI. Ces certificats numériques contiennent des identifiants qui confirment l’authenticité d’une identité en ligne ou d’autres attributs préalablement vérifiés.  
+Ces certificats permettent :  
+À un navigateur de démarrer une session TLS/SSL sécurisée sans avertissement de sécurité  
+À un internaute de savoir que le site Internet consulté est authentique  
+À une entreprise de communiquer et traiter avec ses clients de manière sécurisée  
+Les AC fournissent également des sceaux qui apportent aux internautes la preuve visuelle que le site est authentique et sécurisé  
 
 ---
 
