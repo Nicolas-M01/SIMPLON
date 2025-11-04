@@ -92,17 +92,23 @@ De nombreux navigateurs (comme Firefox, Chrome, Edge) prennent en charge DoH dir
 ✅ Se fond dans le trafic HTTPS (difficile à filtrer)  
 ❌ Peut centraliser les requêtes chez un seul fournisseur (ex. Cloudflare, Google)  
 
-
-
-
 ---
 
 **8. Dans quels cas trouve-t-on du DNS sur TCP ?**  
 🔹
+
+---
+
 **9. Capturer un flux `HTTP`**  
-🔹
+🔹![alt text](<Capture d'écran 2025-11-04 111855.png>)  
+
+---
+
 **10. Qu’est-ce que le `HTTP Smuggling` ? Donner un exemple de `CVE`**  
 🔹
+
+---
+
 **11.  Comment mettre en place la confidentialité et l'authenticité pour HTTP ?**  
 🔹
 **12.  Qu’est-ce qu’une `PKI` ?**  
