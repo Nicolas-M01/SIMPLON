@@ -123,34 +123,66 @@ La PKI permet d'assurer : identité, authenticité, intégrité, confidentialit�
 ---
 
 **13. Capturer un `mot de passe` HTTP via le projet VulnerableLightApp.**  
-🔹
+🔹![alt text](<Capture d'écran 2025-11-04 152328.png>)  
+
+Je capture l'identifiant et le mot de passe de VulnerableLightApp en http (0.0.0.0:4000) depuis une machine cliente (serveur Windows).    
 
 ---
 
 **14.   Comment mettre en place la `confidentialité` pour ce service ?**  
-🔹
+🔹Il faut chiffrer le canal de communication. Il faut donc passer en HTTPS (HTTP+TLS). Pour cela il faut générer un certificat (auto signé ou émis par une autorité), puis utiliser https au lieu de http.  
+
+---
+
 **15.   Capturer un `handshake TLS`**  
 🔹
+
+---
+
 **16.   Qu’est-ce qu’une autorité de certification (`AC`) racine ? Qu'est qu'une `AC intermediaire` ?**  
 🔹
+
+---
+
 **17.   Connectez-vous sur `taisen.fr` et affichez la `chaine de confiance` du certificat**  
 🔹
+
+---
+
 **18.   Capturer une authentification `Kerberos` (mettre en place le service si nécessaire), identifier l'`AS_REQ`, `AS_REP` et les messages suivants.**  
 🔹
+
+---
+
 **19.   Capturer une `authentification RDP` (mettre en place le service si nécessaire), quel est le protocole d'authentification capturé ?**  
 🔹
+
+---
+
 **20.   Quelles sont les attaques connues sur `NetLM` ?**  
 🔹 
+
+---
 
 **21.   Capturer une `authentification WinRM` (Vous pouvez utiliser EvilWinRM si nécessaire côté client.), quel est le protocole d'authentification capturé ?**  
 🔹  
 
+---
+
 **22.   Capturer une `authentification SSH` ou SFTP (mettre en place le service si nécessaire)**  
 🔹  
 
+---
+
 **23.   Intercepter un `fichier au travers du protocole SMB`**  
 🔹  
+
+---
+
 **24.   Comment proteger l'`authenticité` et la `confidentialité` d'un partage SMB ?**  
 🔹  
+
+---
+
 > [!TIP]
 > Bonus : **Déchiffrer le traffic TLS** en important la clé privée du certificat dans Wireshark et **reconstituer le fichier** qui à transité sur le réseau à l'aide de Wireshark  
