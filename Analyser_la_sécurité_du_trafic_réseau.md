@@ -135,7 +135,7 @@ Je capture l'identifiant et le mot de passe de VulnerableLightApp en http (0.0.0
 ---
 
 **15.   Capturer un `handshake TLS`**  
-🔹![alt text](Images/Capture d'écran 2025-11-04 160839.png)  
+🔹![alt text](Images/Capture%20d'écran%202025-11-04%20160839.png)  
 Il faut fermer tous les onglets pour pouvoir réinitialiser un handshake TLS.  
 
 
