@@ -123,7 +123,7 @@ La PKI permet d'assurer : identité, authenticité, intégrité, confidentialit�
 ---
 
 **13. Capturer un `mot de passe` HTTP via le projet VulnerableLightApp.**  
-🔹![alt text](Images/Capture%20d'écran%202025-11-04%20152328.png)  
+🔹![alt text](Images/mdp1.png)  
 
 Je capture l'identifiant et le mot de passe de VulnerableLightApp en http (0.0.0.0:4000) depuis une machine cliente (serveur Windows).    
 
