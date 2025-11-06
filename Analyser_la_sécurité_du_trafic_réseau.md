@@ -33,7 +33,7 @@ Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le r
 
 **1. Capturer le processus `DORA` du protocole DHCP**  
 🔹Ma machine cliente windows est en DHCP et un serveur DHCP est installé sur mon serveur Windows. je réalise un `ipconfig /release` pour libérer l'adresse IP, pusi un `ipconfig /renew` pour qu'il recherche une nouvelle IP grâce au serveur DHCP. En filtrant par "dhcp"  
-![alt text](<Capture d'écran 2025-11-04 094302.png>)  
+![alt text](Images/Capture%20d'écran%202025-11-04%20094302.png)  
 
 ---
 
@@ -59,9 +59,9 @@ Ce dernier va ensuite installer un serveur DHCP malveillant pour attribuer des a
 
 **5. Capturer une `requête DNS` et sa réponse**  
 🔹Je lance une résolution de nom DNS sur une machine cliente du domaine :  
-![alt text](<Capture d'écran 2025-11-04 095856.png>)  
+![alt text](Images/Capture%20d'écran%202025-11-04%20095856.png)  
 Je lance une capture en filtrant avec "dns" sur mon serveur :  
-![alt text](<Capture d'écran 2025-11-04 100639.png>)  
+![alt text](Images/Capture%20d'écran%202025-11-04%20100639.png)  
 
 ---
 
@@ -100,7 +100,7 @@ De nombreux navigateurs (comme Firefox, Chrome, Edge) prennent en charge DoH dir
 ---
 
 **9. Capturer un flux `HTTP`**  
-🔹![alt text](<Capture d'écran 2025-11-04 111855.png>)  
+🔹![alt text](Images/Capture%20d'écran%202025-11-04%20111855.png)  
 
 ---
 
@@ -123,7 +123,7 @@ La PKI permet d'assurer : identité, authenticité, intégrité, confidentialit�
 ---
 
 **13. Capturer un `mot de passe` HTTP via le projet VulnerableLightApp.**  
-🔹![alt text](<Capture d'écran 2025-11-04 152328.png>)  
+🔹![alt text](Images/Capture%20d'écran%202025-11-04%20152328.png)  
 
 Je capture l'identifiant et le mot de passe de VulnerableLightApp en http (0.0.0.0:4000) depuis une machine cliente (serveur Windows).    
 
@@ -158,9 +158,9 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 
 **18.   Capturer une authentification `Kerberos` (mettre en place le service si nécessaire), identifier l'`AS_REQ`, `AS_REP` et les messages suivants.**  
 🔹Je vérifie que Kerberos est bien en écoute sur le serveur Windows :  
-![alt text](<Capture d’écran 2025-11-04 201038.png>)  
+![alt text](Images/Capture%20d’écran%202025-11-04%20201038.png)  
 🔹Puis je démarre une machine windows sur le domaine.  
-![alt text](<Capture d'écran 2025-11-04 203400.png>)  
+![alt text](Images/Capture%20d'écran%202025-11-04%20203400.png)  
 
 ---
 
