@@ -165,7 +165,7 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **19.   Capturer une `authentification RDP` (mettre en place le service si nécessaire), quel est le protocole d'authentification capturé ?**  
-🔹
+🔹![imageRDPwinserv](Images/bureaudistwinserv.png)
 
 ---
 
