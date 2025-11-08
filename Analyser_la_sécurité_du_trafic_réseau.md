@@ -197,7 +197,7 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **22.   Capturer une `authentification SSH` ou SFTP (mettre en place le service si nécessaire)**  
-🔹  
+🔹Après avoir vérifié que le service SSH était actif sur mon serveur Debian, je lance la capture sur Kali avec l'IP de mon serveur SSH. Puis je me connecte depuis mon Windows Server : ![alt text](<Images/Capture d’écran 2025-11-08 191042.png>)  
 
 ---
 
