@@ -187,7 +187,7 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **21.   Capturer une `authentification WinRM` (Vous pouvez utiliser EvilWinRM si nécessaire côté client.), quel est le protocole d'authentification capturé ?**  
->🔹Je me connecte depuis la machine cliente WIN11 en Admin WinRM vers mon Windows Server 2025  
+>🔹Je me connecte depuis la machine cliente WIN11 en Admin WinRM vers mon Windows Server 2025.  
 
 ![alt text](<Images/Capture d'écran 2025-11-08 185527.png>)  
 
