@@ -165,7 +165,13 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **19.   Capturer une `authentification RDP` (mettre en place le service si nécessaire), quel est le protocole d'authentification capturé ?**  
-🔹![imageRDPwinserv](Images/bureaudistwinserv.png)
+
+🔹Paramétrage sur Win Server
+![imageRDPwinserv](Images/bureaudistwinserv.png)  
+
+🔹Activer également sur machine cliente. Lancer la connexion en tapant simplement "rdp" dans la barre de recherche, taper nom DNS ou IP.  
+🔹Capture avec WireShark avec une Kali sur le réseau ( bien activer le mode "**promiscuous**")  
+![RDPconnexion](Images/RDP.png)  
 
 ---
 
