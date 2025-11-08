@@ -152,7 +152,7 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **17.   Connectez-vous sur `taisen.fr` et affichez la `chaine de confiance` du certificat**  
-🔹
+🔹![alt text](Images/certificates.png)
 
 ---
 
