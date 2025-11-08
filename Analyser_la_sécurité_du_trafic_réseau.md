@@ -193,7 +193,8 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 
 >🔹J'observe depuis ma Kali sur le réseau, et je vois les paquets passer sur le `port 5985 côté serveur`.  
 
-![alt text](<Images/Capture d’écran 2025-11-08 185621.png>)
+![alt text](<Images/Capture d’écran 2025-11-08 185621.png>)  
+
 ---
 
 **22.   Capturer une `authentification SSH` ou SFTP (mettre en place le service si nécessaire)**  
@@ -202,7 +203,9 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **23.   Intercepter un `fichier au travers du protocole SMB`**  
-🔹  
+🔹  Je paramètre WireShark pour écouter sur le port 445 en TCP du serveur SMB. Puis je me connecte avec la machine WIN11 cliente et j'ouvre le dossier en partage "Partage Wireable" et je crée le fichier "Test pour capture WireShark". ça fonctionne:  
+
+![alt text](<Images/Capture d’écran 2025-11-08 194138.png>)
 
 ---
 
