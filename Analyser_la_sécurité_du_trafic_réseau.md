@@ -1,5 +1,5 @@
 
-## Contexte
+## 🦈 Contexte 🦈
 
 Il vous est demandé de procéder à l'analyse des protocoles utilisés sur le réseau et de détecter d'éventuelles faiblesses.
 
@@ -212,7 +212,15 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 **24.   Comment proteger l'`authenticité` et la `confidentialité` d'un partage SMB ?**  
 🔹  
 
+
+
+
+
+
 ---
+
+# 🦈🐱🦈
+
 
 > [!TIP]
 > Bonus : **Déchiffrer le traffic TLS** en important la clé privée du certificat dans Wireshark et **reconstituer le fichier** qui à transité sur le réseau à l'aide de Wireshark  
