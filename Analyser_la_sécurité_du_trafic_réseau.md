@@ -162,6 +162,8 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 🔹Puis je démarre une machine windows sur le domaine.  
 ![alt text](Images/Capture%20d'écran%202025-11-04%20203400.png)  
 
+🔹 `AS_REQ`, `AS_REP` sont utilisés dans les étapes initiales d'authentification Kerberos, pour obtenir le ticket TGT.  
+
 ---
 
 **19.   Capturer une `authentification RDP` (mettre en place le service si nécessaire), quel est le protocole d'authentification capturé ?**  
@@ -170,7 +172,10 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ![imageRDPwinserv](Images/bureaudistwinserv.png)  
 
 🔹Activer également sur machine cliente. Lancer la connexion en tapant simplement "rdp" dans la barre de recherche, taper nom DNS ou IP.  
-🔹Capture avec WireShark avec une Kali sur le réseau ( bien activer le mode "**promiscuous**")  
+
+
+> 🔹 **`Capture avec WireShark depuis une Kali sur le réseau ( bien activer le mode "promiscuous").  
+> J'ai lancé la connexion avec l'enregistrement DNS "*DC1.nico.local*" (et pas l'IP), j'ai donc une authentification Kerberos avant d'être autorisé à me connecter en RDP**  
 ![RDPconnexion](Images/RDP.png)  
 
 ---
