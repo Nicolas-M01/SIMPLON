@@ -182,7 +182,9 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **20.   Quelles sont les attaques connues sur `NetLM` ?**  
-🔹 
+🔹 La plus connue est l'attaque NTLM relay. Une attaque par relais est le fait d’intercepter une information transitant sur un réseau et de la relayer vers une cible, qui n’est d’autre que le destinataire légitime de l’information. Le protocole NTLM effectue le challenge/réponse en clair car le hash du mot de passe est prévu pour protéger ce secret. Il est alors possible pour un utilisateur malveillant en position Man In The Middle d’intercepter tous les challenges/réponses circulant sur le réseau.  
+Si un attaquant intercepte une réponse valide et la relaye à la cible, il se retrouve authentifié à la place du client légitime.  
+
 
 ---
 
@@ -210,10 +212,14 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **24.   Comment proteger l'`authenticité` et la `confidentialité` d'un partage SMB ?**  
-🔹  
+🔹Pour l'authenticité :  
+* Il faut utiliser Kerberos, plutôt que NTLM.  
+* Définir des droits NTFS.  
+* Signature SMB (`Set-SmbServerConfiguration -RequireSecuritySignature $true`). En l'activant chaque requête est associée à une signature cryptographique.  
 
-
-
+🔹 Pour l'authenticité :
+* Utiliser SMB3 et son chiffrement natif `Set-SmbServerConfiguration -EncryptData $true`.  
+* Utiliser un VPN (ou IPsec) pour chiffrer tout le traffic.  
 
 
 
