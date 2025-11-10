@@ -123,9 +123,9 @@ La PKI permet d'assurer : identité, authenticité, intégrité, confidentialit�
 ---
 
 **13. Capturer un `mot de passe` HTTP via le projet VulnerableLightApp.**  
-🔹![alt text](Images/mdp1.png)  
+![alt text](Images/mdp1.png)  
 
-Je capture l'identifiant et le mot de passe de VulnerableLightApp en http (0.0.0.0:4000) depuis une machine cliente (serveur Windows).    
+🔹Je capture l'identifiant et le mot de passe de VulnerableLightApp en http (0.0.0.0:4000) depuis une machine cliente (serveur Windows).    
 
 ---
 
@@ -135,8 +135,8 @@ Je capture l'identifiant et le mot de passe de VulnerableLightApp en http (0.0.0
 ---
 
 **15.   Capturer un `handshake TLS`**  
-🔹![alt text](Images/Capture%20d'écran%202025-11-04%20160839.png)  
-Il faut fermer tous les onglets pour pouvoir réinitialiser un handshake TLS.  
+![alt text](Images/Capture%20d'écran%202025-11-04%20160839.png)  
+🔹Il faut fermer tous les onglets pour pouvoir réinitialiser un handshake TLS.  
 
 
 ---
@@ -168,7 +168,7 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 
 **19.   Capturer une `authentification RDP` (mettre en place le service si nécessaire), quel est le protocole d'authentification capturé ?**  
 
-🔹Paramétrage sur Win Server
+🔹Paramétrage sur Win Server  
 ![imageRDPwinserv](Images/bureaudistwinserv.png)  
 
 🔹Activer également sur machine cliente. Lancer la connexion en tapant simplement "rdp" dans la barre de recherche, taper nom DNS ou IP.  
@@ -182,7 +182,7 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **20.   Quelles sont les attaques connues sur `NetLM` ?**  
-Le plus connues :
+Le plus connues :  
 🔹 NTLM relay : L'attaquant se place au milieu de la communication (en MITM) et relay une authentification NTLM reçue d'une victime vers un service cible pour s'authentifier à sa place. L'attaquant n'a même pas besoin de connaître le mot de passe, il va récupérer l'autorisation du serveur pour se connecter.  
 
 🔹 Pass The Hash : L'attaquant récupère le hash du mot de passe dans le base de données et l'utilise pour s'authentifier sur d'autres machines. Pas besoin de connapitre le mot de passe ici non plus.  
