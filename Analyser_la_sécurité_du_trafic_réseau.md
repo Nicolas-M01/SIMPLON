@@ -218,6 +218,14 @@ L'outil Responder est utilisé dans le cadre d'attaques NTLM (Relay et pass the 
 
 ![alt text](<Images/Capture d’écran 2025-11-08 194138.png>)
 
+### **🔹``Récupération du texte ajouté dans le fichier envoyé en SMBv2 depuis le client WIN11 vers le serveur SMB WinServ.``**  
+
+![alt text](<Images/Capture d’écran 2025-11-10 123358.png>)
+Cliquer sur la trame "Write request" ou "Write response", puis dans "Fichier>Exporter Objets>SMB..."
+![alt text](<Images/Capture d’écran 2025-11-10 123601.png>)
+
+![alt text](<Images/Capture d’écran 2025-11-10 123236.png>)
+
 ---
 
 **24.   Comment proteger l'`authenticité` et la `confidentialité` d'un partage SMB ?**  
