@@ -222,9 +222,13 @@ L'outil Responder est utilisé dans le cadre d'attaques NTLM (Relay et pass the 
 
 ![alt text](<Images/Capture d’écran 2025-11-10 123358.png>)
 Cliquer sur la trame "Write request" ou "Write response", puis dans "Fichier>Exporter Objets>SMB..."
-![alt text](<Images/Capture d’écran 2025-11-10 123601.png>)
+![alt text](<Images/Capture d’écran 2025-11-10 123601.png>)  
 
-![alt text](<Images/Capture d’écran 2025-11-10 123236.png>)
+![alt text](<Images/Capture d’écran 2025-11-10 123236.png>)  
+
+### **`Récupération du texte directement dans la trame "Write Request" partie "Data"`**  
+
+![alt text](<Images/Capture d’écran 2025-11-10 150615.png>)  
 
 ---
 
