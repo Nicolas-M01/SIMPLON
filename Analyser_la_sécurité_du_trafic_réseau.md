@@ -182,9 +182,16 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **20.   Quelles sont les attaques connues sur `NetLM` ?**  
-🔹 La plus connue est l'attaque NTLM relay. Une attaque par relais est le fait d’intercepter une information transitant sur un réseau et de la relayer vers une cible, qui n’est d’autre que le destinataire légitime de l’information. Le protocole NTLM effectue le challenge/réponse en clair car le hash du mot de passe est prévu pour protéger ce secret. Il est alors possible pour un utilisateur malveillant en position Man In The Middle d’intercepter tous les challenges/réponses circulant sur le réseau.  
-Si un attaquant intercepte une réponse valide et la relaye à la cible, il se retrouve authentifié à la place du client légitime.  
+Le plus connues :
+🔹 NTLM relay : L'attaquant se place au milieu de la communication (en MITM) et relay une authentification NTLM reçue d'une victime vers un service cible pour s'authentifier à sa place. L'attaquant n'a même pas besoin de connaître le mot de passe, il va récupérer l'autorisation du serveur pour se connecter.  
 
+🔹 Pass The Hash : L'attaquant récupère le hash du mot de passe dans le base de données et l'utilise pour s'authentifier sur d'autres machines. Pas besoin de connapitre le mot de passe ici non plus.  
+
+🔹LLMNR poisoning : L'attaquant répond aux requêtes de résolution de noms et force une authentification vers lui pour récupérer les réponses/hashes. (LLMNR, protocole de résolution de noms dans un réseau local sans avoir besoin de DNS).  
+
+
+L'outil Responder est utilisé dans le cadre d'attaques NTLM (Relay et pass the hash)  
+![alt text](<Images/Capture d’écran 2025-11-10 100721.png>)  
 
 ---
 
