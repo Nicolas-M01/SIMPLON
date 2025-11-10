@@ -182,7 +182,9 @@ Les AC fournissent également des sceaux qui apportent aux internautes la preuve
 ---
 
 **20.   Quelles sont les attaques connues sur `NetLM` ?**  
-Le plus connues :  
+
+Les plus connues :  
+
 🔹 NTLM relay : L'attaquant se place au milieu de la communication (en MITM) et relay une authentification NTLM reçue d'une victime vers un service cible pour s'authentifier à sa place. L'attaquant n'a même pas besoin de connaître le mot de passe, il va récupérer l'autorisation du serveur pour se connecter.  
 
 🔹 Pass The Hash : L'attaquant récupère le hash du mot de passe dans le base de données et l'utilise pour s'authentifier sur d'autres machines. Pas besoin de connapitre le mot de passe ici non plus.  
