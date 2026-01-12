@@ -2,6 +2,7 @@
 ## Analyse de l’infrastructure
 • **Analyser l'infrastructure et la configuration des équipements**  
 
+
 • **Qu’est-ce que HSRP ? Proposer une définition simple.**  
 Host Standby Router Protocol (HSRP) est un protocole propriétaire de Cisco implémenté sur les routeurs et les commutateurs de niveau 3 permettant une continuité de service.  
 
