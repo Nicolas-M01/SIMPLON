@@ -30,21 +30,51 @@ Si `R1` tombe, c'est `R3` qui devient actif, et `R2` deviendra "standby" et ce s
 Le `R2` est en standby, le routeur actif est `R3` et `R1` en listen (donc dernier à prendre le relai)  
 
 • **Noter les adresses IP virtuelles (VIP) et physiques (R1, R2, R3) utilisées dans les groupes HSRP, à quoi servent ces différentes adresses ?**  
-:bulb: **HSRP GROUP 1**  
+>:bulb: **HSRP GROUP 1**  
 VIP : 172.30.128.254/24  
 `R1`: 172.30.128.251/24  
 `R2`: 172.30.128.252/24  
 `R3`: 172.30.128.253/24  
 
 
-:bulb: **HSRP GROUP 2**  
+>:bulb: **HSRP GROUP 2**  
 VIP : 92.60.150.1/24  
 `R1`: 92.60.150.2/24  
 `R2`: 92.60.150.3/24  
 `R3`: 92.60.150.4/24  
 
+>:bulb: Les adresses physiques prennent l'adresse virtuelle de la passerelle par défaut grâce au protocole HSRP.  
+
 
 • **Identifier les interfaces réseau participant à HSRP sur chaque routeur, leurs priorités, les délais et les autres paramètres HSRP configurés sur les routeurs. Que comprenez-vous ?**  
+### `R1`:  
+* **HSRP GROUP 1:**
+  - GigabitEthernet0/0/0 : 172.30.128.251/24 : Priority 120 donc prioritaire  
+  
+* **HSRP GROUP 2:**
+  - GigabitEthernet0/0/1 : 92.60.150.2/24 : Priority 100  
+
+
+### `R2`:  
+* **HSRP GROUP 1:**
+  - GigabitEthernet0/0/0 : 172.30.128.252/24 : Priority 100   
+
+* **HSRP GROUP 2:**
+  - GigabitEthernet0/0/1 : 92.60.150.3/24 : Priority 100   
+
+
+### `R3`:  
+* **HSRP GROUP 1:**
+  - GigabitEthernet0/0/0 : 172.30.128.253/24 : Priority 100   
+
+* **HSRP GROUP 2:**
+  - GigabitEthernet0/0/1 : 92.60.150.4/24 : Priority 100   
+
+
+>:bulb: Délais : Toutes les 3 secondes le routeur envoie aux autres routeur du HSRP, un message "Hello" pour dire qu'il est bien dispo si besoin. Le hold time est le temps d'attente sans réponse du routeur actif pour qu'un autre routeur prenne le relai.  
+
+![alt text](<Images/Capture d'écran 2026-01-12 184737.png>)
+
 
 ---
 
