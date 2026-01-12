@@ -32,17 +32,16 @@ Le `R2` est en standby, le routeur actif est `R3` et `R1` en listen (donc dernie
 • **Noter les adresses IP virtuelles (VIP) et physiques (R1, R2, R3) utilisées dans les groupes HSRP, à quoi servent ces différentes adresses ?**  
 :bulb: **HSRP GROUP 1**  
 VIP : 172.30.128.254/24  
-`R1`
-`R2`
-`R3`
+`R1`: 172.30.128.251/24  
+`R2`: 172.30.128.252/24  
+`R3`: 172.30.128.253/24  
 
 
 :bulb: **HSRP GROUP 2**  
 VIP : 92.60.150.1/24  
-`R1`
-`R2`
-`R3`
-
+`R1`: 92.60.150.2/24  
+`R2`: 92.60.150.3/24  
+`R3`: 92.60.150.4/24  
 
 
 • **Identifier les interfaces réseau participant à HSRP sur chaque routeur, leurs priorités, les délais et les autres paramètres HSRP configurés sur les routeurs. Que comprenez-vous ?**  
