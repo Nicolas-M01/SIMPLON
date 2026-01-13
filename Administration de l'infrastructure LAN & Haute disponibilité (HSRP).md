@@ -94,6 +94,7 @@ Si on prend la config de `R1` pour chaque interface :
 ``standby 1 ip 172.30.128.254`` : Mise en standby du groupe 1 avec IP virtuelle 172.30.128.254 (le groupe se crée ici, groupe 1)  
 ``standby 1 priority 120`` : Paramétrage de la pritorité  
 ``standby 1 preempt`` : Le routeur avec la priorité la plus élevée reprend son status actif en fonction des priorités.  
+`standby 1 timers` <hello> <hold> : Réglage des timers : <hello> est l'intervalle des envois de "Hello" pour indiquer qu'il est actif. <hold> est le temps d'attente avant de changer de routeur actif.  
 ``no shutdown`` : Interface reste allumée  
 ``exit`` : sortie de l'interface  
 
