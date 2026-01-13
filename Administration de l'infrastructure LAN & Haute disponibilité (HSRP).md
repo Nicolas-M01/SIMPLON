@@ -72,6 +72,7 @@ VIP : 92.60.150.1/24
 
 
 >:bulb: Délais : Toutes les 3 secondes le routeur envoie aux autres routeur du HSRP, un message "Hello" pour dire qu'il est bien dispo si besoin. Le hold time est le temps d'attente sans réponse du routeur actif pour qu'un autre routeur prenne le relai.  
+Dans le cas d'une priorité équivalente, c'est l'adresse IP la plus élevée qui sera choisie.  
 
 ![alt text](<Images/Capture d'écran 2026-01-12 184737.png>)
 
@@ -89,7 +90,7 @@ Si on prend la config de `R1` pour chaque interface :
 ``ip address 172.30.128.251 255.255.255.0`` : attribution IP à cette interface  
 ``standby 1 ip 172.30.128.254`` : Mise en standby du groupe 1 avec IP virtuelle 172.30.128.254  
 ``standby 1 priority 120`` : Paramétrage de la pritorité  
-``standby 1 preempt``  
+``standby 1 preempt`` : Le routeur avec la priorité la plus élevée reprend son status actif en fonction des priorités.  
 ``no shutdown`` : Interface reste allumée  
 ``exit`` : sortie de l'interface  
 
