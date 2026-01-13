@@ -81,6 +81,9 @@ Dans le cas d'une priorité équivalente, c'est l'adresse IP la plus élevée qu
 
 ## Configuration HSRP  
 • **À l'aide des informations que vous avez collectées, proposer un guide de commandes de configuration HSRP.**  
+**Expliquer brièvement le rôle de chaque commande utilisée. Identifier les éléments clés tels que le numéro de groupe HSRP, les adresses IP virtuelles, les priorités, les délais, ainsi que les commandes permettant d'activer HSRP sur l'interface.**  
+
+
 Si on prend la config de `R1` pour chaque interface :  
 
 * Pour GigabitEthernet0/0/0 :  
@@ -88,7 +91,7 @@ Si on prend la config de `R1` pour chaque interface :
 ``conf t`` : mode config  
 ``interface g0/0/0`` : sélection interface    
 ``ip address 172.30.128.251 255.255.255.0`` : attribution IP à cette interface  
-``standby 1 ip 172.30.128.254`` : Mise en standby du groupe 1 avec IP virtuelle 172.30.128.254  
+``standby 1 ip 172.30.128.254`` : Mise en standby du groupe 1 avec IP virtuelle 172.30.128.254 (le groupe se crée ici, groupe 1)  
 ``standby 1 priority 120`` : Paramétrage de la pritorité  
 ``standby 1 preempt`` : Le routeur avec la priorité la plus élevée reprend son status actif en fonction des priorités.  
 ``no shutdown`` : Interface reste allumée  
@@ -106,6 +109,3 @@ Si on prend la config de `R1` pour chaque interface :
 ``exit``  
 
 
-
-
-**Expliquer brièvement le rôle de chaque commande utilisée. Identifier les éléments clés tels que le numéro de groupe HSRP, les adresses IP virtuelles, les priorités, les délais, ainsi que les commandes permettant d'activer HSRP sur l'interface.**  
