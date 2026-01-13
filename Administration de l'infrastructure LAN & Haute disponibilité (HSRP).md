@@ -97,6 +97,7 @@ Si on prend la config de `R1` pour chaque interface :
 ``no shutdown`` : Interface reste allumée  
 ``exit`` : sortie de l'interface  
 
+
 * Pour GigabitEthernet0/0/1 :  
 ``enable``  
 ``conf t``  
