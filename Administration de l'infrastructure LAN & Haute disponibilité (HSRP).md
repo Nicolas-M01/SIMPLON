@@ -86,7 +86,7 @@ Si on prend la config de `R1` pour chaque interface :
 ``enable`` : mode root  
 ``conf t`` : mode config  
 ``interface g0/0/0`` : sélection interface    
-``ip address 172.30.128.252 255.255.255.0`` : attribution IP à cette interface  
+``ip address 172.30.128.251 255.255.255.0`` : attribution IP à cette interface  
 ``standby 1 ip 172.30.128.254`` : Mise en standby du groupe 1 avec IP virtuelle 172.30.128.254  
 ``standby 1 priority 120`` : Paramétrage de la pritorité  
 ``standby 1 preempt``  
@@ -98,8 +98,8 @@ Si on prend la config de `R1` pour chaque interface :
 ``conf t``  
 ``interface g0/0/1``  
 ``ip address 92.60.150.4 255.255.255.0``  
-``standby 2 ip 92.60.150.1``  
-``standby 2 priority 120``  
+``standby 2 ip 92.60.150.4``  
+``standby 2 priority 100``  
 ``standby 2 preempt``  
 ``no shutdown``  
 ``exit``  
