@@ -12,7 +12,7 @@
 Host Standby Router Protocol (HSRP) est un protocole propriétaire de Cisco implémenté sur les routeurs et les commutateurs de niveau 3 permettant une continuité de service.  
 
 • **Pourquoi utilise-t-on HSRP et quel problème résout-il ? Expliquer l'intérêt de HSRP dans ce réseau**  
-HSRP est principalement utilisé pour assurer la disponibilité de la passerelle par défaut dans un sous-réseau en dépit d'une panne d'un routeur.  
+HSRP est principalement utilisé pour assurer la disponibilité de la passerelle par défaut dans un sous-réseau en dépit d'une panne d'un routeur. Les endpoints ne connaissent que l'adresse IP virtuelle, c'est leur GW.  
 
 
 ---
@@ -80,5 +80,31 @@ VIP : 92.60.150.1/24
 
 ## Configuration HSRP  
 • **À l'aide des informations que vous avez collectées, proposer un guide de commandes de configuration HSRP.**  
+Si on prend la config de `R1` pour chaque interface :  
+
+* Pour GigabitEthernet0/0/0 :  
+``enable`` : mode root  
+``conf t`` : mode config  
+``interface g0/0/0`` : sélection interface    
+``ip address 172.30.128.252 255.255.255.0`` : attribution IP à cette interface  
+``standby 1 ip 172.30.128.254`` : Mise en standby du groupe 1 avec IP virtuelle 172.30.128.254  
+``standby 1 priority 120`` : Paramétrage de la pritorité  
+``standby 1 preempt``  
+``no shutdown`` : Interface reste allumée  
+``exit`` : sortie de l'interface  
+
+* Pour GigabitEthernet0/0/1 :  
+``enable``  
+``conf t``  
+``interface g0/0/1``  
+``ip address 92.60.150.4 255.255.255.0``  
+``standby 2 ip 92.60.150.1``  
+``standby 2 priority 120``  
+``standby 2 preempt``  
+``no shutdown``  
+``exit``  
+
+
+
 
 **Expliquer brièvement le rôle de chaque commande utilisée. Identifier les éléments clés tels que le numéro de groupe HSRP, les adresses IP virtuelles, les priorités, les délais, ainsi que les commandes permettant d'activer HSRP sur l'interface.**  
