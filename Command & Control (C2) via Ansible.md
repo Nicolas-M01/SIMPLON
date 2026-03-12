@@ -115,7 +115,7 @@ Lancer Playbook : `ansible-playbook -i inventory.ini 2-create-user.yml -k`
 
 Résultat :  
 
-````yaml
+```yaml
 PLAY [Creation utilisateur et configuration SSH] *******************************************************************
 
 TASK [Gathering Facts] ********************************************************************
@@ -132,6 +132,92 @@ PLAY RECAP *********************************************************************
 ```
 
 
+### Playbook 2 : 3-deploy-website.yml  
+
+`mkdir ~/ansible-nginx-demo`, `cd ~/ansible-nginx-demo`  
+`cp /etc/ansible/inventory.ini .` : copie du fichier d'inventaire dans le nouveau dossier.  
+`curl -L https://github.com/do-community/html_demo_site/archive/refs/heads/main.zip -o html_demo.zip` : téléchargement du site web (installer curl avant).  
+`sudo apt install unzip` et `unzip html_demo.zip` :  installe et dezip le fichier téléchargé.  
+`ls -la html_demo_site-main` : Pour voir le contenue dézippé.  
+
+`mkdir files`, `nano files/nginx.conf.j2` : Création d'un dossier et du fichier config.  
+
+Ce fichier modèle contient la configuration d'un bloc serveur Nginx pour un site web HTML statique :  
+```bash
+server {
+  listen 80;
+
+  root {{ document_root }}/{{ app_root }};
+  index index.html index.htm;
+
+  server_name {{ server_name }};
+  
+  location / {
+   default_type "text/html";
+   try_files $uri.html $uri $uri/ =404;
+  }
+}
+```
+
+
+```yaml
+- hosts: all
+  become: no
+  vars:
+    server_name: "{{ ansible_default_ipv4.address }}"
+    document_root: /var/www/html
+    app_root: html_demo_site-main
+  tasks:
+
+    - name: Update apt cache and install Nginx
+      apt:
+        name: nginx
+        state: latest
+        update_cache: yes
+
+    - name: Copy website files to the server's document root
+      copy:
+        src: "{{ app_root }}"
+        dest: "{{ document_root }}"
+        mode: preserve
+
+    - name: Apply Nginx template
+      template:
+        src: files/nginx.conf.j2
+        dest: /etc/nginx/sites-available/default
+      notify: Restart Nginx
+
+    - name: Enable new site
+      file:
+        src: /etc/nginx/sites-available/default
+        dest: /etc/nginx/sites-enabled/default
+        state: link
+      notify: Restart Nginx
+
+    - name: Allow all access to tcp port 80
+      ufw:
+        rule: allow
+        port: '80'
+        proto: tcp
+
+  handlers:
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
+```
+
+
+
+
+#### Contenu de la page Web
+
+"root@Master-Nico-Ansible:~/ansible-nginx-demo/html_demo_site-main# cat index.html"  
+![alt text](<Images/Capture d'écran 2026-03-12 160029.png>)  
+
+
+Exécution du playbook :  
+![alt text](<Images/Capture d'écran 2026-03-12 162615.png>)
 
 
 
