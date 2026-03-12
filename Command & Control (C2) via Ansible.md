@@ -166,35 +166,35 @@ Création du nouveau playbook :
 - hosts: all
   become: no
   vars:
-    server_name: "{{ ansible_default_ipv4.address }}"
-    document_root: /var/www/html
-    app_root: html_demo_site-main
+    server_name: "{{ ansible_default_ipv4.address }}" # Récupère automatiquement l'IP de la machine distante
+    document_root: /var/www/html # Répertoire racine du site web Nginx
+    app_root: html_demo_site-main  # Dossier source du site (sur la machine contrôleur)
   tasks:
 
     - name: Update apt cache and install Nginx
       apt:
-        name: nginx
-        state: latest
-        update_cache: yes
+        name: nginx # Paquet à installer
+        state: latest # S'assure que c'est la dernière version
+        update_cache: yes # Fait "apt update" avant l'installation
 
     - name: Copy website files to the server's document root
       copy:
-        src: "{{ app_root }}"
-        dest: "{{ document_root }}"
-        mode: preserve
+        src: "{{ app_root }}" # Source : dossier local "html_demo_site-main"
+        dest: "{{ document_root }}" # Destination : /var/www/html sur la machine distante
+        mode: preserve # Conserve les permissions des fichiers d'origine
 
     - name: Apply Nginx template
       template:
-        src: files/nginx.conf.j2
-        dest: /etc/nginx/sites-available/default
-      notify: Restart Nginx
+        src: files/nginx.conf.j2 # Template Jinja2 local (les variables comme server_name y sont injectées)
+        dest: /etc/nginx/sites-available/default # Config Nginx sur la machine distante
+      notify: Restart Nginx # Déclenche le handler si ce fichier est modifié
 
     - name: Enable new site
       file:
-        src: /etc/nginx/sites-available/default
-        dest: /etc/nginx/sites-enabled/default
-        state: link
-      notify: Restart Nginx
+        src: /etc/nginx/sites-available/default # Fichier de config du site
+        dest: /etc/nginx/sites-enabled/default # Lien symbolique pour activer le site
+        state: link # Crée un lien symbolique (équivalent de "ln -s")
+      notify: Restart Nginx 
 
     - name: Allow all access to tcp port 80
       ufw:
