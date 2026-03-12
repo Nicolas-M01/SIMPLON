@@ -159,6 +159,8 @@ server {
 }
 ```
 
+Création du nouveau playbook :  
+
 
 ```yaml
 - hosts: all
@@ -210,14 +212,16 @@ server {
 
 
 
-#### Contenu de la page Web
+#### Contenu de la page Web  
 
 "root@Master-Nico-Ansible:~/ansible-nginx-demo/html_demo_site-main# cat index.html"  
 ![alt text](<Images/Capture d'écran 2026-03-12 160029.png>)  
 
 
-Exécution du playbook :  
-![alt text](<Images/Capture d'écran 2026-03-12 162615.png>)
+**Exécution du playbook :**  
+
+`ansible-playbook -i inventory.ini playbook.yml -u devops`  
+![alt text](<Images/Capture d'écran 2026-03-12 162615.png>)  
 
 
 
