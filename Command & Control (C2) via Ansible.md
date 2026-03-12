@@ -61,4 +61,77 @@ Tester le ping `ansible -i inventory.ini serveurs_web -m ping -k` : si retour po
 >* -m ping → exécute le module ping d'Ansible (vérifie que la machine est >joignable et que Python est disponible)  
 >* -k → demande le mot de passe SSH au lieu d'utiliser une clé  
 
+### Playbook 1 : 1-update-os.yml
+
+
+```yaml
+---
+- name: Udpate OS
+  hosts: all # Cible tous les hôtes de l'inventaire
+  become: yes # Exécute les tâches en sudo (nécessaire pour apt)
+
+  tasks:
+    - name: Mettre a jour le cache APT et faire un upgrade
+      apt:
+        update_cache: yes # Équivalent de "apt update
+        upgrade: dist # Équivalent de "apt dist-upgrade" (installer/supprimer des dépendances) 
+```
+
+`ansible-playbook -i inventory.ini 1-update-os.yml -k`  
+
+Résultat :  
+![alt text](<Images/Capture d'écran 2026-03-12 141325.png>)  
+
+
+### Playbook 2 : 2-create-user.yml  
+
+Générer clés SSH : `ssh-keygen -t rsa -b 4096`  
+`nano 2-create-user.yml`  
+
+```yaml
+---
+- name: Creation utilisateur et configuration SSH
+  hosts: serveurs_web  # Cible uniquement le groupe "serveurs_web" de l'inventaire  
+  become: yes # Exécute en sudo (nécessaire pour créer un utilisateur)  
+
+  tasks:
+    - name: Creer utilisateur devops avec un bash
+      user:
+        name: devops # Nom de l'utilisateur à créer  
+        shell: /bin/bash # Shell par défaut (bash)  
+        groups: sudo # Ajoute l'utilisateur au groupe sudo (droits d'administration)  
+        append: yes # IMPORTANT : ajoute le groupe sans écraser les groupes existants                            # Sans "append: yes", les autres groupes de l'utilisateur seraient supprimés  
+
+    - name: Ajouter la clee publique SSH pour devops
+      authorized_key:
+        user: devops # Utilisateur pour lequel on autorise la clé
+        state: present # S'assure que la clé est bien présente (idempotent)
+        key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}" # lookup('file', ...) lit le contenu du fichier local id_rsa.pub
+        # et l'insère dans ~/.ssh/authorized_keys de l'utilisateur devops sur la machine distante
+        # Équivalent manuel de : ssh-copy-id devops@machine
+```
+
+Lancer Playbook : `ansible-playbook -i inventory.ini 2-create-user.yml -k`  
+
+Résultat :  
+
+````yaml
+PLAY [Creation utilisateur et configuration SSH] *******************************************************************
+
+TASK [Gathering Facts] ********************************************************************
+ok: [192.168.1.58]
+
+TASK [Creer utilisateur devops avec un bash] *******************************************************************
+changed: [192.168.1.58]
+
+TASK [Ajouter la clee publique SSH pour devops] ********************************************************************
+changed: [192.168.1.58]
+
+PLAY RECAP *****************************************************************************
+192.168.1.58               : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0  
+```
+
+
+
+
 
