@@ -237,7 +237,7 @@ Mise en situation : Maintenant que l'utilisateur devops est créé, il a besoin 
 
 * **Création du coffre fort :**  
 `ansible-vault create secrets.yml` : Copier `secret_password_devops: "VotreMotDePasseDevops"` : ce mot de passe qui sera chiffré à la sauvegarde.  
-
+(Si le fichier a été écrit en clair et n'est pas chiffré : `ansible-vault encrypt secrets.yml` rechiffre).  
 
 ![alt text](<Images/Capture d'écran 2026-03-13 120720.png>)  
 
