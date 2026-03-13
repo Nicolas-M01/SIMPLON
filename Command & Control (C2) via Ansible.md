@@ -228,3 +228,26 @@ Création du nouveau playbook :
 Connexion depuis une autre machine sur le même réseau vers ma machine cliente.  
 ![alt text](<Images/Capture d'écran 2026-03-12 165337.png>)
 
+
+
+### Exercice Pratique : Sécurisation des secrets avec Ansible Vault
+
+Mise en situation : Maintenant que l'utilisateur devops est créé, il a besoin de ses droits sudo pour administrer le serveur (par exemple, pour mettre à jour l'OS ou installer Nginx). Pour cela, le système cible va exiger son mot de passe.  
+Écrire un mot de passe en clair dans un fichier YAML est une violation majeure des règles de sécurité. En tant qu'Administrateur d'Infrastructures Sécurisées, vous devez chiffrer ce secret.  
+
+* **Création du coffre fort :**  
+`ansible-vault create secrets.yml` : Il nous envoie sous VIM, je sors de VIM avec ":wq" et je le réouvre avec nano.  
+
+* **Je rentre la ligne du dessous dans le fichier `secrets.yml` :**  
+`secret_password_devops: "VotreMotDePasseDevops"` : ce mot de passe nous allons encuite le chiffrer.  
+
+* **Chiffrement du mot de passe (en clair pour l'instant) dans secrets.yml :**  
+`ansible-vault encrypt secrets.yml` : le mot de passe est désormais chiffré  
+![alt text](<Images/Capture d'écran 2026-03-13 120720.png>)  
+
+
+
+
+
+
+![alt text](<Images/Capture d'écran 2026-03-13 120838.png>)
