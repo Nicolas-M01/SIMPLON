@@ -38,6 +38,8 @@ Sur chacune : `apt update` pour mettre à jour la liste des paquets.
 * `apt install ansible` : Installer les paquets Ansible  
 * `cd /etc`, `mkdir ansible`  
 * `apt install openssh-client`, `systemctl daemon-reload`, `systemctl enable ssh`, `systemctl start ssh`, `systemctl status ssh` : install et lancement du service SSH client.  
+* `sudo apt install sshpass -y` : Outil qui permet de fournir un mot de passe SSH automatiquement dans un script. (Par défaut, Ansible se connecte aux serveurs en SSH avec des clés SSH (méthode recommandée). Mais si les machines distantes utilisent un mot de passe SSH, Ansible ne peut pas l’envoyer automatiquement sans outil supplémentaire.
+➡️ sshpass permet à Ansible d’envoyer le mot de passe automatiquement.)  
 
 **Machine Cliente :**  
 * `apt install openssh-server`, `systemctl daemon-reload`, `systemctl start sshd`, `systemctl status sshd` : install serveur SSH, lancement...  
