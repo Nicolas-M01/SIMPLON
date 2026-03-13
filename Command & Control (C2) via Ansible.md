@@ -236,18 +236,52 @@ Mise en situation : Maintenant que l'utilisateur devops est créé, il a besoin 
 Écrire un mot de passe en clair dans un fichier YAML est une violation majeure des règles de sécurité. En tant qu'Administrateur d'Infrastructures Sécurisées, vous devez chiffrer ce secret.  
 
 * **Création du coffre fort :**  
-`ansible-vault create secrets.yml` : Il nous envoie sous VIM, je sors de VIM avec ":wq" et je le réouvre avec nano.  
-
-* **Je rentre la ligne du dessous dans le fichier `secrets.yml` :**  
-`secret_password_devops: "VotreMotDePasseDevops"` : ce mot de passe nous allons encuite le chiffrer.  
+`ansible-vault create secrets.yml` : Copier `secret_password_devops: "VotreMotDePasseDevops"` : ce mot de passe nous allons ensuite le chiffrer.  
 
 * **Chiffrement du mot de passe (en clair pour l'instant) dans secrets.yml :**  
 `ansible-vault encrypt secrets.yml` : le mot de passe est désormais chiffré  
+
 ![alt text](<Images/Capture d'écran 2026-03-13 120720.png>)  
 
+* **Modification du Playbook de mise à jour :**  
+Ouvrez votre fichier 1-update-os.yml et modifiez-le pour qu'il aille lire le fichier chiffré.  
+Vous devez y ajouter deux choses :  
+La directive vars_files pour indiquer où est le coffre.  
+La variable système magique ansible_become_password qui dira à Ansible : "Utilise ce secret précis quand le serveur cible demandera le mot de passe sudo".  
+
+```yml
+---
+- name: Mise à jour de l'OS avec élévation de privilèges sécurisée
+  hosts: serveurs_web
+  become: yes # Obligatoire, car 'devops' a besoin de sudo pour mettre à jour l'OS
+
+  # 1. On charge le fichier chiffré
+  vars_files:
+    - secrets.yml # Chargement du fichier chiffré par Ansible Vault (ne jamais mettre en clair dans le playbook)
+
+  # 2. On affecte notre variable secrète à la variable système sudo d'Ansible
+  vars:
+    ansible_become_password: "{{ secret_password_devops }}" # Mot de passe sudo injecté dynamiquement depuis le vault, jamais écrit en dur
+
+  tasks:
+    - name: Mettre à jour le cache APT et faire un upgrade
+      apt:
+        update_cache: yes # Rafraîchit la liste des paquets disponibles (équivalent apt update)
+        upgrade: dist # Met à jour tous les paquets, y compris les dépendances système (équivalent apt dist-upgrade)
+```
+
+* **Changement utilisateur (on enlève root pour passer à devops) :**  
+  
+```yml
+[serveurs_web]
+192.168.1.16 ansible_user=devops`
+```  
+
+
+* **Exécution sécurisée :**  
+`ansible-playbook -i inventory.ini 1-update-os.yml --ask-vault-pass`  
+
+![alt text](<Images/Capture d'écran 2026-03-13 120838.png>)  
 
 
 
-
-
-![alt text](<Images/Capture d'écran 2026-03-13 120838.png>)
