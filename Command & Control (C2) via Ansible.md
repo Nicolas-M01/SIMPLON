@@ -236,10 +236,8 @@ Mise en situation : Maintenant que l'utilisateur devops est créé, il a besoin 
 Écrire un mot de passe en clair dans un fichier YAML est une violation majeure des règles de sécurité. En tant qu'Administrateur d'Infrastructures Sécurisées, vous devez chiffrer ce secret.  
 
 * **Création du coffre fort :**  
-`ansible-vault create secrets.yml` : Copier `secret_password_devops: "VotreMotDePasseDevops"` : ce mot de passe nous allons ensuite le chiffrer.  
+`ansible-vault create secrets.yml` : Copier `secret_password_devops: "VotreMotDePasseDevops"` : ce mot de passe qui sera chiffré à la sauvegarde.  
 
-* **Chiffrement du mot de passe (en clair pour l'instant) dans secrets.yml :**  
-`ansible-vault encrypt secrets.yml` : le mot de passe est désormais chiffré  
 
 ![alt text](<Images/Capture d'écran 2026-03-13 120720.png>)  
 
