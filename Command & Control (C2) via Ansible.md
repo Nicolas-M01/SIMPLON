@@ -64,7 +64,7 @@ Tester le ping `ansible -i inventory.ini serveurs_web -m ping -k` : si retour po
 ### Playbook 1 : 1-update-os.yml
 
 
-```yaml
+```yml
 ---
 - name: Udpate OS
   hosts: all # Cible tous les hôtes de l'inventaire
@@ -88,7 +88,7 @@ Résultat :
 Générer clés SSH : `ssh-keygen -t rsa -b 4096`  
 `nano 2-create-user.yml`  
 
-```yaml
+```yml
 ---
 - name: Creation utilisateur et configuration SSH
   hosts: serveurs_web  # Cible uniquement le groupe "serveurs_web" de l'inventaire  
@@ -115,7 +115,7 @@ Lancer Playbook : `ansible-playbook -i inventory.ini 2-create-user.yml -k`
 
 Résultat :  
 
-```yaml
+```yml
 PLAY [Creation utilisateur et configuration SSH] *******************************************************************
 
 TASK [Gathering Facts] ********************************************************************
@@ -162,7 +162,7 @@ server {
 Création du nouveau playbook :  
 
 
-```yaml
+```yml
 - hosts: all
   become: no
   vars:
