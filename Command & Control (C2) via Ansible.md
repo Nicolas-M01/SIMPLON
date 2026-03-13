@@ -222,7 +222,7 @@ Création du nouveau playbook :
 
 **Exécution du playbook :**  
 
-`ansible-playbook -i inventory.ini playbook.yml -u devops`  
+`ansible-playbook -i inventory.ini playbook.yml -u devops -k`  
 ![alt text](<Images/Capture d'écran 2026-03-12 162615.png>)  
 
 Connexion depuis une autre machine sur le même réseau vers ma machine cliente.  
