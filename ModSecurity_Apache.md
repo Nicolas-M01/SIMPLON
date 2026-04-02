@@ -15,6 +15,43 @@ Avec droits sudo (membre du groupe sudoer `getent group sudo` et éviter "root")
 ![alt text](<Images/Capture d'écran 2026-04-02 111517.png>)
 
 
+#### Installer/Configurer moteur ModSecurity  
+
+`sudo apt install libapache2-mod-security2 -y`
+sudo a2enmod security2  
+sudo systemctl restart apache2  
+sudo cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf  
+
+
+#### Intégration de l'OWASP Core Rule Set (CRS)
+
+cd /tmp
+wget "https://github.com/coreruleset/coreruleset/archive/refs/tags/v4.25.0.tar.gz"  
+tar -xzvf v4.25.0.tar.gz  
+sudo mv coreruleset-4.25.0/ /etc/apache2/modsecurity-crs  
+cd /etc/apache2/modsecurity-crs  
+sudo cp crs-setup.conf.example crs-setup.conf  
+
+
+
+
+
+
+
+
+`sudo nano /etc/modsecurity/modsecurity.conf`  
+```bash
+SecRuleEngine On   # Activer les règles, retirer "AuditOnly"
+SecRequestBodyAccess On
+SecResponseBodyAccess On
+SecAuditEngine RelevantOnly
+```
+
+
+
+
+
+
 
 
 
