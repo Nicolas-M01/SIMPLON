@@ -9,7 +9,10 @@ Avec droits sudo (membre du groupe sudoer `getent group sudo` et éviter "root")
 `sudo apt install apache2 -y`  
 `sudo systemctl status apache2` : doit renvoyer "Active"  
 
-
+#### Installer et configurer ufw
+`sudo apt install ufw`, `sudo ufw allow 'OpenSSH'`, `sudo ufw allow 80` `sudo ufw allow 443`, `sudo ufw enable`  
+> :bulb: Pare feu actif et bien paramétré :  
+![alt text](<Images/Capture d'écran 2026-04-02 111517.png>)
 
 
 
