@@ -32,15 +32,17 @@ ERAQRM-IBHF À ZVQV
 
 > mnthkkdr qzldm
 
-• Transmettre le texte chiffré à votre binôme
-• Transmettre la clé à votre binôme par un autre canal
-o Au sein de votre binôme, déchiffrez le message pour découvrir vos plats préférés
-respectifsMon plat :
+• Transmettre le texte chiffré à votre binôme  
+• Transmettre la clé à votre binôme par un autre canal  
+o Au sein de votre binôme, déchiffrez le message pour découvrir vos plats préférés  
+respectifs  
 
-> nouilles ramen
+>Mon plat :  
+>nouilles ramen  
 
 Son plat :  
-![alt text](image.png)
+![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 143431.png>)
+
 
 ## Partie 3 : Chiffrement symétrique AES
 
@@ -107,12 +109,15 @@ Génération d’une paire de clés RSA• Utilisez Generate RSA Key Pair avec u
 > Longueur : 1024 bits
 > Format : PEM
 
-Découverte• Chiffrez le message suivant avec votre clé publique : LE MESSAGE EST SECRETSIMPLEo Quelle est la sortie chiffrée ?
-
-• Utilisez votre clé privée pour déchiffrer le messageo La sortie est-elle identique au message d’origine ?
+Découverte  
+• Chiffrez le message suivant avec votre clé publique : LE MESSAGE EST SECRETSIMPLE  
+o Quelle est la sortie chiffrée ?  
+![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 152548.png>)
+• Utilisez votre clé privée pour déchiffrer le message  
+o La sortie est-elle identique au message d’origine ?  
 
 > Oui
-> ![1777296153963](image/MettreenœuvredesmécanismescryptographiquesdansunSI/1777296153963.png)
+> ![alt text](image/TP1-CyberChef/1777296153963.png)
 
 Transmission d’un message chiffré à votre binôme• Récupérez la clé publique de votre binôme• Chiffrez votre réplique préférée avec les paramètres suivantso Key : « la clé publique de votre binôme»o Encryption scheme : RSA-OAEPo Message Digest Algorithm : SHA-1• Transmettre le texte chiffré à votre binôme
 
