@@ -6,19 +6,19 @@
 
 #### 1. Avec une « Box Height » de 13, chiffrer la phrase suivante : RENDEZ-VOUS À MIDI
 
-##### Quel est le texte chiffré ?
+##### Quel est le texte chiffré ?  
 
-ERAQRM-IBHF À ZVQV
+>ERAQRM-IBHF À ZVQV  
 
-##### Déchiffrez ce texte pour vérifier le résultat
+##### Déchiffrez ce texte pour vérifier le résultat  
 
-> RENDEZ-VOUS À MIDI
+> RENDEZ-VOUS À MIDI  
 
-#### 2. Chiffrer le nom de votre film préféré avec une « Box Height » de votre choix
+#### 2. Chiffrer le nom de votre film préféré avec une « Box Height » de votre choix  
 
-##### Transmettre le texte chiffré à votre binôme sans lui communiquer la clé
+##### Transmettre le texte chiffré à votre binôme sans lui communiquer la clé  
 
-> Mf tfjhofvs eft boofbvy
+> Mf tfjhofvs eft boofbvy  
 
 ##### Au sein de votre binôme, essayer de retrouver le message en sens inverse
 
