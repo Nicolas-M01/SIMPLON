@@ -125,56 +125,56 @@ o La sortie est-elle identique au message d’origine ?
 > Oui
 > ![alt text](image/TP1-CyberChef/1777296153963.png)
 
-Transmission d’un message chiffré à votre binôme• Récupérez la clé publique de votre binôme• Chiffrez votre réplique préférée avec les paramètres suivantso Key : « la clé publique de votre binôme»o Encryption scheme : RSA-OAEPo Message Digest Algorithm : SHA-1• Transmettre le texte chiffré à votre binôme
+Transmission d’un message chiffré à votre binôme• Récupérez la clé publique de votre binôme• Chiffrez votre réplique préférée avec les paramètres suivantso Key : « la clé publique de votre binôme»o Encryption scheme : RSA-OAEPo Message Digest Algorithm : SHA-1• Transmettre le texte chiffré à votre binôme  
 
-o Votre binôme, doit déchiffrer le message à l’aide de sa clé privée pour découvrir votre réplique préféréeo Inversez ensuite les rôles pour que chacun connaisse la réplique privée de son binôme
+o Votre binôme, doit déchiffrer le message à l’aide de sa clé privée pour découvrir votre réplique préféréeo Inversez ensuite les rôles pour que chacun connaisse la réplique privée de son binôme  
 
 ## Partie 5 : Hachage
 
-• Utilisez différents algorithmes de hachage sur la chaîne ADMIN123o SHA-1
+• Utilisez différents algorithmes de hachage sur la chaîne ADMIN123o SHA-1  
 
-> 93a6682a45cca19a71a8c9e3015e0c4b3a80e22c
+> 93a6682a45cca19a71a8c9e3015e0c4b3a80e22c  
 
-o SHA-2 : 256, 512
+o SHA-2 : 256, 512  
 
-> 256 bits
-> 5b40171489659251097e7790fc2f1892e2183a72546fe1df283d07865db9149c
+> 256 bits  
+> 5b40171489659251097e7790fc2f1892e2183a72546fe1df283d07865db9149c  
 
-> 512 bits
-> 25974977f6b51e4e8707e78281ba9b19ec54357901d51383658c57e3747d72a2fe00b3bb2e20d310cbbe1c49a0b6bb71df9f047a6253875041ea567bc85b2fcd
+> 512 bits  
+>25974977f6b51e4e8707e78281ba9b19ec54357901d51383658c57e3747d72a2fe00b3bb2e20d310cbbe1c49a0b6bb71df9f047a6253875041ea567bc85b2fcd  
 
-o SHA-3 : 256, 512
+o SHA-3 : 256, 512  
 
-> 256 bits
+> 256 bits  
 > 5bddba0700f67dc277fc021c256d888275f9c47f3e8d92752112ddd30edd5743
 
-> 512 bits
-> 8d224b1287f5e84fbd9d14e493a14d91179c3111de584a2937f1ec76f82d9dccec4b33dad54dca5ab905443210c2d3067b00367c304be18705d0ff6d1be0399f
+> 512 bits  
+>5d224b1287f5e84fbd9d14e493a14d91179c3111de584a2937f1ec76f82d9dccec4b33dad54dca5ab905443210c2d3067b00367c304be18705d0ff6d1be0399f  
 
-• Quelles sont les tailles des hashs produits ?
+• Quelles sont les tailles des hashs produits ?  
 
-> Réponses au dessus dans les réponses.
+> Réponses au dessus dans les réponses.  
 
-o Est-il possible de retrouver le mot de passe à partir du hash ?
+o Est-il possible de retrouver le mot de passe à partir du hash ?  
 
 > Normalement, un hashage est irréversible, on ne peut pas le déchiffrer.
 > Mais on peut retrouver un mot de passe par attaque par dictionnaire (en hashant une liste de passwords), par brute force mais très long, par rainbow table (liste de mots de passes avec les hashes précalculés).
 
-o Essayez deux textes légèrement différents (TEST et TESt) Que constatez-vous dans les résultats des hashs ?
+o Essayez deux textes légèrement différents (TEST et TESt) Que constatez-vous dans les résultats des hashs ?  
 
-> Les Hashes sont complèement différents.
+> Les Hashes sont complèement différents.  
 
-• Hacher le texte « hello » en SHA1 (80 rounds)
+• Hacher le texte « hello » en SHA1 (80 rounds)  
 
-> aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+> aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d  
 
-o Crackez le hash sur https://crackstation.net/ Le hash est cracké en quelques secondes, comment cela est-ce possible ?
+o Crackez le hash sur https://crackstation.net/ Le hash est cracké en quelques secondes, comment cela est-ce possible ?  
 
->![1777304464603](image/TP1-CyberChef/1777304464603.png) 
-> C'est possible parce que le mot "hello" est basique et son hash est connu. Un hash est unique.
+>![1777304464603](image/TP1-CyberChef/1777304464603.png)  
+> C'est possible parce que le mot "hello" est basique et son hash est connu. Un hash est unique.  
 
-• Répéter le point précédent avec SHA1 (50 rounds) Le hash est-il cracké ? Pourquoi ?
+• Répéter le point précédent avec SHA1 (50 rounds) Le hash est-il cracké ? Pourquoi ?  
 
-> Non, parce que l'on est plus sur un format standard, donc il est non connu de la base de données.
+> Non, parce que l'on est plus sur un format standard, donc il est non connu de la base de données.  
 
-### 😹
+## 😹
