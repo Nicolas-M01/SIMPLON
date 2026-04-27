@@ -25,9 +25,9 @@ ERAQRM-IBHF À ZVQV
 • Transmettre le texte chiffré à votre binôme
 • Transmettre la clé à votre binôme par un autre canal
 o Au sein de votre binôme, déchiffrez le message pour découvrir vos plats préférés
-respectifs
+respectifs  
 Mon plat :  
->nouilles ramen
+>nouilles ramen  
 
 Son plat :  
 ![1777293315104](image/Cryptographie/1777293315104.png)
@@ -41,7 +41,7 @@ o IV :
 o Mode : ECB
 o Input : mode Raw
 o Output : Hex
-![1777293612693](image/Cryptographie/1777293612693.png)
+>![1777293612693](image/Cryptographie/1777293612693.png)
 
 
 • Que constatez-vous si vous modifiez 1 caractère du texte initial ?  
@@ -52,7 +52,7 @@ o Output : Hex
 
 
 o Vous devez retrouver le texte d'origine
-### ✅ 🐱 ✅
+### >✅ 🐱 ✅
 
 Transmission d’un message chiffré à votre binôme
 • Générer une clé adéquate
@@ -69,7 +69,7 @@ o Output : Hex
 o Au sein de votre binôme, déchiffrez le message pour découvrir vos équipes de sport préférées respectives
 
 Son équipe :  
-![1777294799293](image/MettreenœuvredesmécanismescryptographiquesdansunSI/1777294799293.png)
+>![1777294799293](image/MettreenœuvredesmécanismescryptographiquesdansunSI/1777294799293.png)
 
 Mon équipe :
 >![1777295265680](image/MettreenœuvredesmécanismescryptographiquesdansunSI/1777295265680.png)
