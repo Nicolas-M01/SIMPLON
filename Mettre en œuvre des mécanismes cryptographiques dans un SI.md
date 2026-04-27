@@ -159,7 +159,7 @@ o SHA-3 : 256, 512
 
 
 • Quelles sont les tailles des hashs produits ?  
-Réponses au dessus dans les réponses.  
+>Réponses au dessus dans les réponses.  
 
 o Est-il possible de retrouver le mot de passe à partir du hash ?  
 >Normalement, un hashage est irréversible, on ne peut pas le déchiffrer.  
