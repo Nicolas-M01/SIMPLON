@@ -41,7 +41,7 @@ respectifs
 >nouilles ramen  
 
 Son plat :  
-![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 143431.png>)
+![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 143431.png>)  
 
 
 ## Partie 3 : Chiffrement symétrique AES
@@ -117,7 +117,8 @@ Génération d’une paire de clés RSA• Utilisez Generate RSA Key Pair avec u
 Découverte  
 • Chiffrez le message suivant avec votre clé publique : LE MESSAGE EST SECRETSIMPLE  
 o Quelle est la sortie chiffrée ?  
->![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 152548.png>)
+>![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 152548.png>)  
+
 • Utilisez votre clé privée pour déchiffrer le message  
 o La sortie est-elle identique au message d’origine ?  
 
