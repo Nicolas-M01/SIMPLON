@@ -25,12 +25,12 @@ sudo cp /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecuri
 
 #### Intégration de l'OWASP Core Rule Set (CRS)
 
-cd /tmp
-wget "https://github.com/coreruleset/coreruleset/archive/refs/tags/v4.25.0.tar.gz"  
-tar -xzvf v4.25.0.tar.gz  
-sudo mv coreruleset-4.25.0/ /etc/apache2/modsecurity-crs  
-cd /etc/apache2/modsecurity-crs  
-sudo cp crs-setup.conf.example crs-setup.conf  
+``cd /tmp``
+``wget "https://github.com/coreruleset/coreruleset/archive/refs/tags/v4.25.0.tar.gz" `` 
+``tar -xzvf v4.25.0.tar.gz``  
+``sudo mv coreruleset-4.25.0/ /etc/apache2/modsecurity-crs``  
+``cd /etc/apache2/modsecurity-crs``  
+``sudo cp crs-setup.conf.example crs-setup.conf``  
 
 
 
@@ -41,7 +41,7 @@ sudo cp crs-setup.conf.example crs-setup.conf
 
 `sudo nano /etc/modsecurity/modsecurity.conf`  
 ```bash
-SecRuleEngine On   # Activer les règles, retirer "AuditOnly"
+SecRuleEngine On   # Activer les règles, retirer "DetectionOnly"  
 SecRequestBodyAccess On
 SecResponseBodyAccess On
 SecAuditEngine RelevantOnly
