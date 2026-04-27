@@ -121,7 +121,7 @@ o Quelle est la sortie chiffrée ?
 
 • Utilisez votre clé privée pour déchiffrer le message  
 o La sortie est-elle identique au message d’origine ?  
-
+🏴‍☠️
 > Oui
 > ![alt text](image/TP1-CyberChef/1777296153963.png)
 
@@ -177,4 +177,4 @@ o Crackez le hash sur https://crackstation.net/ Le hash est cracké en quelqu
 
 > Non, parce que l'on est plus sur un format standard, donc il est non connu de la base de données.  
 
-## 😹
+## 😹🏴‍☠️😹
