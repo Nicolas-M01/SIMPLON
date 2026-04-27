@@ -170,7 +170,7 @@ o Essayez deux textes légèrement différents (TEST et TESt) Que constatez-v
 
 o Crackez le hash sur https://crackstation.net/ Le hash est cracké en quelques secondes, comment cela est-ce possible ?
 
-> ![1777302135505](image/MettreenœuvredesmécanismescryptographiquesdansunSI/1777302135505.png)
+>![1777304464603](image/TP1-CyberChef/1777304464603.png) 
 > C'est possible parce que le mot "hello" est basique et son hash est connu. Un hash est unique.
 
 • Répéter le point précédent avec SHA1 (50 rounds) Le hash est-il cracké ? Pourquoi ?
