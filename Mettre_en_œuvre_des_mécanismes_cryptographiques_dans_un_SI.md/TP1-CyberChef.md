@@ -46,24 +46,29 @@ Son plat :
 
 ## Partie 3 : Chiffrement symétrique AES
 
-Découverte• Chiffrez la chaîne 'TESTSECRET1234567' avec les paramètres suivantso Key : c34fa73d7c5f8901a23e4cd98e7f650d9a17d4e8f902fa0d3286d0beaad219b6o IV :o Mode : ECBo Input : mode Rawo Output : Hex
+Découverte  
+• Chiffrez la chaîne 'TESTSECRET1234567' avec les paramètres suivantso Key :  c34fa73d7c5f8901a23e4cd98e7f650d9a17d4e8f902fa0d3286d0beaad219b6o  
+IV :  
+o Mode : ECB  
+o Input : mode Raw  
+o Output : Hex  
 
-• Que constatez-vous si vous modifiez 1 caractère du texte initial ?
+• Que constatez-vous si vous modifiez 1 caractère du texte initial ?  
 
 > Le message chiffré change complètement
 
-• Déchiffrez le texte AES chiffré précédemment en adaptant les paramètres
+• Déchiffrez le texte AES chiffré précédemment en adaptant les paramètres  
 
-o Vous devez retrouver le texte d'origine
+o Vous devez retrouver le texte d'origine  
 
 ### >✅ 🐱 ✅
 
-Transmission d’un message chiffré à votre binôme
-• Générer une clé adéquate
+Transmission d’un message chiffré à votre binôme  
+• Générer une clé adéquate  
 
-• Chiffrez le nom de votre équipe de sport préférée avec les paramètres suivants
-o Key : « la clé que vous avez généré »
-o IV :
+• Chiffrez le nom de votre équipe de sport préférée avec les paramètres suivants  
+o Key : « la clé que vous avez généré »  
+o IV :  
 o Mode : ECB  
 o Input : mode Raw  
 o Output : Hex  
@@ -72,10 +77,10 @@ o Output : Hex
 o Au sein de votre binôme, déchiffrez le message pour découvrir vos équipes de sport préférées respectives  
 
 Son équipe :  
-![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 145905.png>)
+![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 145905.png>)  
 
 Mon équipe :  
-![1777303830411](image/TP1-CyberChef/1777303830411.png)
+![1777303830411](image/TP1-CyberChef/1777303830411.png)  
 
 ## Partie 4 : RSA
 
@@ -88,7 +93,7 @@ Génération d’une paire de clés RSA• Utilisez Generate RSA Key Pair avec u
 > 4RNfC1nADmUFnanUTsDSJqFh8/3iHHchu6J2HYngF/dwg+MiESSAiN8NedTa8Kus
 > qxFGHeJU7QeLECubCr8QRYn78KcD87pXutJrtOItTGzbbUtSx28SCJuUYnME65HY
 > 0ifXI11tJbuhoNExrQIDAQAB
-> -----END PUBLIC KEY-----
+> -----END PUBLIC KEY-----  
 >
 > -----BEGIN RSA PRIVATE KEY-----
 > MIICXQIBAAKBgQC4sfSKBC6S7bq01foHyDsaBMDb4RNfC1nADmUFnanUTsDSJqFh
@@ -104,15 +109,15 @@ Génération d’une paire de clés RSA• Utilisez Generate RSA Key Pair avec u
 > /N5+mch8aqydYZkVab7jyHmIeOtwm/hRqEywFsxbXN+QPTSbeVxupnLVfCpCsEgd
 > Q5ZmH2h8DSgWCn3uV80CQQCiYcceS9dMPI3e2mjh/gzxBsNx3kfT+A5Wk9UPJNlR
 > V38uMbS4K3cdhjGOY72xZqbOCZzNM937LPzpMQykVPt3
-> -----END RSA PRIVATE KEY-----
+> -----END RSA PRIVATE KEY-----  
 
-> Longueur : 1024 bits
-> Format : PEM
+> Longueur : 1024 bits  
+> Format : PEM  
 
 Découverte  
 • Chiffrez le message suivant avec votre clé publique : LE MESSAGE EST SECRETSIMPLE  
 o Quelle est la sortie chiffrée ?  
-![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 152548.png>)
+>![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 152548.png>)
 • Utilisez votre clé privée pour déchiffrer le message  
 o La sortie est-elle identique au message d’origine ?  
 
