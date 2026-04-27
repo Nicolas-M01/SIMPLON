@@ -39,7 +39,7 @@ respectifsMon plat :
 
 > nouilles ramen
 
-Son plat :
+Son plat :  
 ![alt text](image.png)
 
 ## Partie 3 : Chiffrement symétrique AES
@@ -62,16 +62,18 @@ Transmission d’un message chiffré à votre binôme
 • Chiffrez le nom de votre équipe de sport préférée avec les paramètres suivants
 o Key : « la clé que vous avez généré »
 o IV :
-o Mode : ECB
-o Input : mode Raw
-o Output : Hex
-• Transmettre le texte chiffré à votre binôme
-• Transmettre la clé à votre binôme par un autre canal
-o Au sein de votre binôme, déchiffrez le message pour découvrir vos équipes de sport préférées respectives
+o Mode : ECB  
+o Input : mode Raw  
+o Output : Hex  
+• Transmettre le texte chiffré à votre binôme  
+• Transmettre la clé à votre binôme par un autre canal  
+o Au sein de votre binôme, déchiffrez le message pour découvrir vos équipes de sport préférées respectives  
 
-Son équipe :
+Son équipe :  
+![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-27 145905.png>)
 
-Mon équipe :
+Mon équipe :  
+![1777303830411](image/TP1-CyberChef/1777303830411.png)
 
 ## Partie 4 : RSA
 
