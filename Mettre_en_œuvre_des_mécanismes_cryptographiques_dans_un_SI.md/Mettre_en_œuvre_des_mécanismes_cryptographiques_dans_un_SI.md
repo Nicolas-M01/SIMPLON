@@ -263,13 +263,64 @@ o Au sein de votre binôme, déchiffrez le message pour découvrir votre chanson
 En vous inspirant de l’exercice AES, réalisez l’équivalent avec RSA :  
 ### A. Génération de la paire de clés RSA  
 • Générez une paire de clés RSA de 2048 bits  
-
-
+>✅ Clé privée : `openssl genrsa -out private_key.pem 2048` sera stcoké dans le fichier indiquée.    
+>✅ Clé publique `openssl rsa -in private_key.pem -pubout -out public_key.pem` sera extraite à partir de la clé privée et copiée dans le fichier indiqué.    
+>✅ Résultat :  
+>![1777376956207](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777376956207.png)  
 
 ### B. Chiffrement d’un message  
 • Écrivez un court message (ex. : le nom de votre destination de tourisme préférée)  
-• Chiffrez-le avec la clé publique de votre binôme C. Échange et déchiffrement  
+• Chiffrez-le avec la clé publique de votre binôme  
+>✅ Clé publique du binôme :  
+>![1777377419314](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777377419314.png)  
+
+>✅ Chiffrement de mon message avec clé publique de mon binôme :  
+>![1777377584480](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777377584480.png)  
+
+
+
+
+### C. Échange et déchiffrement  
 • Transmettez le fichier chiffré (message_rsa.bin) à votre binôme.  
 • Votre binôme doit déchiffrer le message avec sa clé privée  
+> ✅ Message chiffré avec ma clé publique envoyé à mon binôme, puis déchiffré avec ma clé privée :  
+>![1777378851792](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777378851792.png)  
 
-## III. BONUS Utilisez le chiffrement hybride pour transmettre à votre binôme les paroles de votre chanson préférée ! 
+## III. BONUS Utilisez le chiffrement hybride pour transmettre à votre binôme les paroles de votre chanson préférée !  
+
+> ✅ Je copie/colle les paroles d'une chanson en clair dans un fichier texte :  
+![1777381278489](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777381278489.png)
+
+>✅ Je génération clé AES + IV :  
+>```bash
+>openssl rand -hex 32 > aes_key.hex
+>openssl rand -hex 16 > aes_iv.hex
+>```  
+
+>✅ Chiffrement des données (AES-256-CBC), je chiffre les paroles en AES :  
+> ```bash
+>openssl enc -aes-256-cbc -in paroles_nico_non_chiffrées.txt -out >paroles_nico_chiffrees.bin -K $(cat aes_key.hex) -iv $(cat aes_iv.hex)
+>```  
+
+>✅ Chiffrement de la clé AES (RSA) avec la clé publique de mon binôme  :  
+>```bash
+>openssl pkeyutl -encrypt -pubin -inkey antho_pubkey.txt -in aes_key.hex -out aes_key_chiffree.bin  
+>```  
+
+openssl pkeyutl -encrypt          # chiffrer  
+                -pubin             # la clé fournie est une clé publique  
+                -inkey antho_pubkey.txt   # ← clé publique du binôme (utilisée pour chiffrer)  
+                -in aes_key.hex           # ← ce qu'on chiffre (la clé AES)  
+                -out aes_key_chiffree.bin # ← résultat chiffré  
+
+
+>✅ Je lui envoie les 3 fichiers :  
+>- paroles_nico_chiffrees.bin  
+>- aes_key_chiffree.bin  
+>- aes_iv.hex  
+
+
+> ✅ Déchiffrement des paroles de mon binôme :  
+>![1777379841043](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777379841043.png)  
+
+
