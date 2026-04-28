@@ -1,6 +1,9 @@
-# CyberChef – Cryptographie appliquée
+# Mettre en œuvre des mécanismes cryptographiques dans un SI
 
-## 4) Tâches à réaliser
+
+## TP1-CyberChef
+
+### 4) Tâches à réaliser
 
 ### Partie 1 : Chiffrement de César
 
@@ -178,3 +181,10 @@ o Crackez le hash sur https://crackstation.net/ Le hash est cracké en quelqu
 > Non, parce que l'on est plus sur un format standard, donc il est non connu de la base de données.  
 
 ## 😹🏴‍☠️😹
+
+
+
+
+## TP2-AES et RSA avec OpenSSL.pdf
+
+
