@@ -65,7 +65,7 @@ o Output : Hex
 
 o Vous devez retrouver le texte d'origine  
 
-### >✅ 🐱 ✅
+### ✅ 🐱 ✅
 
 Transmission d’un message chiffré à votre binôme  
 • Générer une clé adéquate  
@@ -324,3 +324,47 @@ openssl pkeyutl -encrypt          # chiffrer
 >![1777379841043](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777379841043.png)  
 
 
+## 😹🏴‍☠️😹
+
+---
+## 💠 TP3-Clés SSH.pdf 💠
+---
+
+### Génération de la clé SSH 
+
+>Je génère une paire de clés RSA en 4096 bits depuis ma machine physique Windows et je l'envoie sur ma linux :  
+>✅ `type C:\Users\maert\.ssh\id_rsa.pub | ssh nico@192.168.1.55 "cat >> ~/.ssh/authorized_keys"`  
+
+
+### Dépôt de la clé publique dans le serveur distant 
+>✅Résultat sur la machine linux qui reçoit la connexion :
+>![1777383154986](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777383154986.png)  
+J'ai reçu la clé publique dans les authorized keys.  
+
+>✅ Ajuster les droits :  
+`chmod 700 .ssh/`  
+`chmod 600 .ssh/authorized_keys`  
+
+
+### Configuration du serveur pour forcer l’authentification par clé 
+
+Dans `/etc/ssh/sshd_config` :  
+>✅ ![1777383961663](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777383961663.png)  
+
+>Redémarrer le service :  
+`systemctl restart sshd` : pour redémarrer le service  
+`systemctl status sshd` : doit renvoyer "active"  
+
+
+### II. Validation du fonctionnement 
+• Connectez-vous au serveur sans mot de passe à l’aide de votre clé privée  
+>✅ ça fonctionne, pas de mot de passe :  
+![1777384249180](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777384249180.png)
+
+• Répondez aux questions suivantes :  
+- Ce qui se passe si vous supprimez la clé privée  
+>✅ Ma machine Windows (cliente), ne pourra plus se conneceter car elle ne pourra plus s'authentifier.  
+- Comment réactiver l'authentification par mot de passe en cas de besoin  
+>✅ Il suffit de modifier le fichier de configuration dans `/etc/ssh/sshd_config` et de remettre `PasswordAuthentication yes`, puis redémarrer le service.  
+
+### III. Bonus 
