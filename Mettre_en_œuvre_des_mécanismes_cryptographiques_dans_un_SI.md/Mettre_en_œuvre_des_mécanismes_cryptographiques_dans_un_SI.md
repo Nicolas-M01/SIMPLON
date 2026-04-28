@@ -371,3 +371,52 @@ Dans `/etc/ssh/sshd_config` :
 • Quel est le rôle de ssh-agent ?  
 >✅ ssh-agent est un gestionnaire de clés privées en mémoire — il évite de retaper la passphrase à chaque connexion.  
 
+## 😹🏴‍☠️😹
+
+---
+## 💠 RockYou John ! 💠  
+---
+
+Je démarre une kali, je la mets en bridge, et j'envoie en ssh le dossier des hash à craquer.  
+
+>je lance `python3 hash-id.py` et je lui envoie les hashes afin de connaître le type de hash (md5, SHA1...), puis le lance le brute force avec la wordlist RockYou :    
+![1777390727218](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777390727218.png)  
+
+**Basiques**  
+>✅ hash1.txt  
+![1777389771278](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777389771278.png)  
+
+>✅ hash2.txt  
+![1777389936340](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777389936340.png)  
+
+>✅ hash3.txt  
+![1777390360614](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777390360614.png)  
+
+>✅ hash4.txt  
+![1777390613291](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777390613291.png)  
+
+**Authentification Windows**  
+>✅ nt.txt  
+![1777390822457](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777390822457.png)  
+
+**/etc/shadow**  
+>✅ etc_hashes.txt  
+Ce fichier contient le compte et le password chiffré en sha512 :  
+![1777393837331](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777393837331.png)  
+
+**Single Crack**  
+>✅ hash07.txt  
+> j'ajoute des règles MD5, pour transformer des mots basiques avec "--rules" : jocker -> jok3r  
+![1777393474759](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777393474759.png)  
+
+**Fichiers Zip protégés par mot de passe**  
+>✅ Secure.zip  
+![1777392519563](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777392519563.png)  
+
+**Fichiers RAR protégés par mot de passe**  
+>✅ Secure.rar  
+![1777392870863](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777392870863.png)  
+
+**Clés SSH**  
+>✅ id_rsa  
+![1777393038524](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777393038524.png)  
