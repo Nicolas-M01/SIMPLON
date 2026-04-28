@@ -420,3 +420,6 @@ Ce fichier contient le compte et le password chiffré en sha512 :
 **Clés SSH**  
 >✅ id_rsa  
 ![1777393038524](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777393038524.png)  
+
+
+# 😹🎣🐟😹
