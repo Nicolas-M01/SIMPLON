@@ -188,6 +188,8 @@ o Crackez le hash sur https://crackstation.net/ Le hash est cracké en quelqu
 ## 💠 TP2-AES et RSA avec OpenSSL 💠
 ---
 
+## 🔑 I. Chiffrement symétrique AES 🔑
+
 >💡J'ai choisi de travailler sur une Debian 12 avec GUI et une carte réseau en pont.  
 >Installation de Openssl
 >`sudo apt install openssl`  
@@ -252,4 +254,22 @@ o Notez les valeurs renvoyées
 o Au sein de votre binôme, déchiffrez le message pour découvrir votre chanson préférée respective  
 
 > ✅
-> ![1777366118344](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777366118344.png)
+> ![1777366118344](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777366118344.png)  
+
+--- 
+
+## 🔑 II. RSA  🔑  
+
+En vous inspirant de l’exercice AES, réalisez l’équivalent avec RSA :  
+### A. Génération de la paire de clés RSA  
+• Générez une paire de clés RSA de 2048 bits  
+
+
+
+### B. Chiffrement d’un message  
+• Écrivez un court message (ex. : le nom de votre destination de tourisme préférée)  
+• Chiffrez-le avec la clé publique de votre binôme C. Échange et déchiffrement  
+• Transmettez le fichier chiffré (message_rsa.bin) à votre binôme.  
+• Votre binôme doit déchiffrer le message avec sa clé privée  
+
+## III. BONUS Utilisez le chiffrement hybride pour transmettre à votre binôme les paroles de votre chanson préférée ! 
