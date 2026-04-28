@@ -1,7 +1,8 @@
 # Mettre en œuvre des mécanismes cryptographiques dans un SI
 
-
-## TP1-CyberChef
+---
+## 💠 TP1-CyberChef 💠
+---
 
 ### 4) Tâches à réaliser
 
@@ -182,9 +183,28 @@ o Crackez le hash sur https://crackstation.net/ Le hash est cracké en quelqu
 
 ## 😹🏴‍☠️😹
 
+---
 
+## 💠 TP2-AES et RSA avec OpenSSL 💠
+---
+>💡J'ai choisi de travailler sur une Debian 12 avec GUI et une carte réseau en pont.  
+>Installation de Openssl
+>`sudo apt install openssl`  
 
+**Chiffrez la chaîne 'TESTSECRET1234567' avec les paramètres suivants**  
+o Mode de chiffrement AES 256 bits en CBC  
+o Sortie en base64  
+o Ajouter un sel (salt) pour sécuriser la dérivation de clé  
+o Fournir une passphrase (pour dériver la clé)  
 
-## TP2-AES et RSA avec OpenSSL.pdf
+>![alt text](<image/TP1-CyberChef/Capture d'écran 2026-04-28 100137.png>)
 
+• **Quelle est la clé réelle utilisée et comment est-elle générée ?**
+La clé est :  **key=086BDBBF6F91282ADDB4CDF8AFBA0177CEE5E4B6B91FDC47DB70C8E7CC97F811**  
+La clé fait 32 octets, 256 bits  
+PBKDF2 applique HMAC-SHA256 en boucle 10000 fois sur "passphrase + salt". Le résultat est ensuite coupé en clé + IV.  
+
+• **Déchiffrez le texte AES chiffré précédemment en adaptant les paramètres**  
+o Vous devez retrouver le texte d'origine  
+>![1777364105721](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777364105721.png)  
 
