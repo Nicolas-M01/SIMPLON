@@ -359,7 +359,7 @@ Dans `/etc/ssh/sshd_config` :
 ### II. Validation du fonctionnement 
 • Connectez-vous au serveur sans mot de passe à l’aide de votre clé privée  
 >✅ ça fonctionne, pas de mot de passe :  
-![1777384249180](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777384249180.png)
+![1777384249180](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777384249180.png)  
 
 • Répondez aux questions suivantes :  
 - Ce qui se passe si vous supprimez la clé privée  
