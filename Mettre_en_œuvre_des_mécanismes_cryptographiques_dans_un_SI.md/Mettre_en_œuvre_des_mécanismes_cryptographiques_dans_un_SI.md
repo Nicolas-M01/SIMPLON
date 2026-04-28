@@ -368,3 +368,6 @@ Dans `/etc/ssh/sshd_config` :
 >✅ Il suffit de modifier le fichier de configuration dans `/etc/ssh/sshd_config` et de remettre `PasswordAuthentication yes`, puis redémarrer le service.  
 
 ### III. Bonus 
+• Quel est le rôle de ssh-agent ?  
+>✅ ssh-agent est un gestionnaire de clés privées en mémoire — il évite de retaper la passphrase à chaque connexion.  
+
