@@ -1,9 +1,10 @@
 
 # 🐱🔒 PKI 🔒🐱
 
-**Script sur VM PKI :**  
+**Script sur VM PKI effectué :**  
 ![alt text](<Images/Capture d'écran 2026-04-29 144125.png>)  
 
+Les autres scripts sont lancés sur les autres VM (Web + DNS).  
 
 Depuis VM cliente, le serveur répond bien avec le nom DNS `web.simplon.local`  
 ![alt text](<Images/Capture d'écran 2026-04-29 145409.png>)  
