@@ -1,5 +1,5 @@
 
-
+# 🐱🔒 PKI 🔒🐱
 
 Script sur VM PKI :  
 ![alt text](<Images/Capture d'écran 2026-04-29 144125.png>)  
@@ -50,7 +50,7 @@ Toujours sur le serveur WEB : Lancez Certbot en lui indiquant l'URL ACME de votr
 #### 3. Test HTTPS et Validation Client  
 1. Lancez une nouvelle capture Wireshark.  
 2. Allez sur [https://web.simplon.local/](https://web.simplon.local/).  
-![alt text](<Images/Capture d'écran 2026-04-29 152112.png>) 
+![alt text](<Images/Capture d'écran 2026-04-29 152112.png>)  
 
 3. Analyse : Le trafic est désormais chiffré. Quel protocole est utilisé ? (Regardez dans Wireshark, vous devriez voir du TLS 1.3). Normalement vous devez voire du TLS 1.3. Si ce n’est pas le cas, votre navigateur n’est pas a jour ou est mal configuré Dans Chrome, taper > chrome://flags/#tls13-variant  
 >✅ HTTPS = HTTP over TLS 1.3 (avec TCP en couche transport)  
