@@ -413,6 +413,10 @@ Ce fichier contient le compte et le password chiffré en sha512 :
 >✅ Secure.zip  
 ![1777392519563](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777392519563.png)  
 
+> **💀 Et le Fl@g 💀**  
+> ### 😹  
+> ![1777446418110](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777446418110.png)
+
 **Fichiers RAR protégés par mot de passe**  
 >✅ Secure.rar  
 ![1777392870863](image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/1777392870863.png)  
