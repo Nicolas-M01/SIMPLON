@@ -55,10 +55,10 @@ Toujours sur le serveur WEB : Lancez Certbot en lui indiquant l'URL ACME de votr
 3. Analyse : Le trafic est désormais chiffré. Quel protocole est utilisé ? (Regardez dans Wireshark, vous devriez voir du TLS 1.3). Normalement vous devez voire du TLS 1.3. Si ce n’est pas le cas, votre navigateur n’est pas a jour ou est mal configuré Dans Chrome, taper > chrome://flags/#tls13-variant  
 >✅ HTTPS = HTTP over TLS 1.3 (avec TCP en couche transport)  
 
-4. Alerte de sécurité du navigateur : Votre navigateur affichera un avertissement de sécurité. C'est normal, votre VM Client ne connaît pas encore la PKI interne !  
+#### 4. Alerte de sécurité du navigateur : Votre navigateur affichera un avertissement de sécurité. C'est normal, votre VM Client ne connaît pas encore la PKI interne !  
 ![alt text](Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI.md/image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/https_warning.png)  
 
-5. Résolution côté client :  
+#### 5. Résolution côté client :  
 Depuis votre VM Client, rendez-vous sur l'URL : [https://pki.simplon.local:8443/roots.pem](https://pki.simplon.local:8443/roots.pem)  
 Le certificat racine se télécharge.  
 ![alt text](Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI.md/image/Mettre_en_œuvre_des_mécanismes_cryptographiques_dans_un_SI/DL_Cert_navigateur.png)  
