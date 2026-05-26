@@ -217,6 +217,11 @@ Dans le bloc \<syscheck> :
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 193633.png>)
 
 
+---
+
+## 🔵 Détection de processus non autorisés
+
+
 
 
 ---
