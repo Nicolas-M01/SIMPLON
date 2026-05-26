@@ -9,8 +9,8 @@
 >✅ Je mets à jour la liste des paquets et je mets à jour ensuite le système
 `sudo apt update && sudo apt upgrade -y`  
 
-### Installation Wazuh
-Installation de Wazuh avec curl (après instll de curl)  
+### Installation Wazuh serveur
+>:gear: Installation de Wazuh avec curl (après instll de curl)  
 `curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a`  
 
 > :bulb: A la fin de l'installation le username et un password fort sont générés automatiquement.  
@@ -28,7 +28,34 @@ Installation de Wazuh avec curl (après instll de curl)
 
 
 
-### ✅ L'installation du SIEM Wazuh est terminée, nous pouvons passer à l'installation de l'agent sur les endpoints pour surveiller leur activité 😹.  
+#### ✅ L'installation du SIEM Wazuh est terminée, nous pouvons passer à l'installation de l'agent sur les endpoints pour surveiller leur activité 😹.  
+
+
+### Installation NIDS Suricata  
+J'ai décidé d'installer l'agent suricata sur une VM cliente Kali.  
+
+```bash
+# 1. Installer le paquet nécessaire pour add-apt-repository (inutile au final, mais nécessaire pour diagnostiquer)
+sudo apt update && sudo apt install -y software-properties-common
+
+# 2. Installer Suricata directement via les dépôts Kali (les PPA Ubuntu ne sont pas compatibles)
+sudo apt update && sudo apt install -y suricata --fix-missing
+
+# 3. Vérifier l'installation
+suricata --version
+```
+
+> #### ✅ L'agent est installé et fonctionnel.
+
+> :bulb: Télécharger et extraire le jeu de règles Emerging Threats Suricata :
+>```bash
+>cd /tmp/ && curl -LO https://rules.emergingthreats.net/open/suricata-6.0.8/emerging.rules.tar.gz
+>sudo tar -xvzf emerging.rules.tar.gz && sudo mkdir /etc/suricata/rules && sudo mv rules/*.rules /etc/>suricata/rules/
+>sudo find /etc/suricata/rules -name "*.rules" -exec chmod 777 {} \;
+>```
+
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 124506.png>)
+
 
 
 
