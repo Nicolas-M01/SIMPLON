@@ -31,7 +31,7 @@
 #### ✅ L'installation du SIEM Wazuh est terminée, nous pouvons passer à l'installation de l'agent sur les endpoints pour surveiller leur activité 😹.  
 
 ## Installation Wazuh agent
-L'agent Wazuh est important sur les machines clientes, c'est lui qui va permettre de faire remonter les logs vers le serveur Wazuh.  
+> :gear: L'agent Wazuh est important sur les machines clientes, c'est lui qui va permettre de faire remonter les logs vers le serveur Wazuh.  
 
 ```bash
 # Prérequis
@@ -82,7 +82,7 @@ sudo systemctl status wazuh-agent
 
 
 ## Installation NIDS Suricata  
-J'installe l'agent Suricata sur la VM cliente Kali qui contient l'agent Wazuh.    
+> :gear: J'installe l'agent Suricata sur la VM cliente Kali qui contient l'agent Wazuh.    
 
 ```bash
 # 1. Installer le paquet nécessaire pour add-apt-repository (inutile au final, mais nécessaire pour diagnostiquer)
