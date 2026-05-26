@@ -71,7 +71,13 @@ sudo systemctl start wazuh-agent
 sudo systemctl status wazuh-agent
 ```
 
-> **✅ L'agent Wazuh est maintenant installé sur la machien cliente**
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 150635.png>)
+
+> **✅ L'agent Wazuh est maintenant installé sur la machine cliente**
+
+
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-26 150257.png>)
+> **✅ La machine cliente est maintenant visible sur le dashboard du serveur**
 
 
 
