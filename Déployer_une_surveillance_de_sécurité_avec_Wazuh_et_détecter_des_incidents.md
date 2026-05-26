@@ -148,6 +148,13 @@ af-packet:
 `sudo systemctl restart wazuh-agent` : le service doit être running  
 
 
+### Émulation d'attaque
+On lance des pings depuis le serveur vers le client : `ping 192.168.1.145`  
+Sur le Dashboard on voit les paquets ICMP dans les journaux d'évènements  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-26 163901.png>)  
+
+
+
 
 
 ## Schéma de l’architecture de supervision
