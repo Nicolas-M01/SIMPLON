@@ -30,9 +30,53 @@
 
 #### ✅ L'installation du SIEM Wazuh est terminée, nous pouvons passer à l'installation de l'agent sur les endpoints pour surveiller leur activité 😹.  
 
+## Installation Wazuh agent
+L'agent Wazuh est important sur les machines clientes, c'est lui qui va permettre de faire remonter les logs vers le serveur Wazuh.  
 
-### Installation NIDS Suricata  
-J'ai décidé d'installer l'agent suricata sur une VM cliente Kali.  
+```bash
+# Prérequis
+sudo apt install -y gnupg apt-transport-https
+
+# Clé GPG
+curl -s https://packages.wazuh.com/key/GPG-KEY-WAZUH | gpg --no-default-keyring --keyring gnupg-ring:/usr/share/keyrings/wazuh.gpg --import && chmod 644 /usr/share/keyrings/wazuh.gpg
+
+# Dépôt (écraser avec > pour éviter les doublons)
+sudo bash -c 'echo "deb [signed-by=/usr/share/keyrings/wazuh.gpg] https://packages.wazuh.com/4.x/apt/ stable main" > /etc/apt/sources.list.d/wazuh.list'
+
+# Installer avec l'IP du serveur Wazuh
+sudo apt update
+sudo WAZUH_MANAGER="192.168.1.19" apt install -y wazuh-agent
+
+# Corriger l'IP dans la config (si MANAGER_IP n'a pas été remplacé)
+sudo sed -i 's/MANAGER_IP/192.168.1.19/' /var/ossec/etc/ossec.conf
+
+# ============================================
+# 3. CONFIGURER SURICATA DANS WAZUH
+# ============================================
+
+# Ajouter les logs Suricata dans la config Wazuh
+sudo nano /var/ossec/etc/ossec.conf
+# → Ajouter avant </ossec_config> :
+# <localfile>
+#   <log_format>json</log_format>
+#   <location>/var/log/suricata/eve.json</location>
+# </localfile>
+
+# ============================================
+# 4. DÉMARRER LES SERVICES
+# ============================================
+sudo systemctl daemon-reload
+sudo systemctl enable wazuh-agent
+sudo systemctl start wazuh-agent
+sudo systemctl status wazuh-agent
+```
+
+> **✅ L'agent Wazuh est maintenant installé sur la machien cliente**
+
+
+
+## Installation NIDS Suricata  
+J'installe l'agent Suricata sur la VM cliente Kali qui contient l'agent Wazuh.    
 
 ```bash
 # 1. Installer le paquet nécessaire pour add-apt-repository (inutile au final, mais nécessaire pour diagnostiquer)
@@ -55,6 +99,31 @@ suricata --version
 >```
 
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 124506.png>)
+
+
+>:gear: Modifier les paramètres de Suricata dans le `/etc/suricata/suricata.yaml` :  
+```yaml
+HOME_NET: "<UBUNTU_IP>"
+EXTERNAL_NET: "any"
+
+default-rule-path: /etc/suricata/rules
+rule-files:
+- "*.rules"
+
+# Global stats configuration
+stats:
+enabled: yes
+
+# Linux high speed capture support
+af-packet:
+  - interface: eth0 # Bien mettre le nom de sa carte réseau
+```
+> :gear: Redémarrer le service Suricata pour prendre en compte ls modif :  
+`sudo systemctl restart suricata`  
+
+
+
+
 
 
 
