@@ -79,7 +79,13 @@ sudo systemctl status wazuh-agent
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-26 150257.png>)
 > **✅ La machine cliente est maintenant visible sur le dashboard du serveur**
 
+> :bulb: Désactiver les mises à jour de Wazuh sur l'agent pour garder les compatibilités
 
+```bash
+sed -i "s/^deb/#deb/" /etc/apt/sources.list.d/wazuh.list
+apt-get update
+echo "wazuh-agent hold" | dpkg --set-selections
+```
 
 ## Installation NIDS Suricata  
 > :gear: J'installe l'agent Suricata sur la VM cliente Kali qui contient l'agent Wazuh.    
@@ -95,7 +101,7 @@ sudo apt update && sudo apt install -y suricata --fix-missing
 suricata --version
 ```
 
-> #### ✅ L'agent est installé et fonctionnel.
+> **✅ L'agent est installé et fonctionnel.**
 
 > :bulb: Télécharger et extraire le jeu de règles Emerging Threats Suricata :
 >```bash
@@ -127,9 +133,19 @@ af-packet:
 > :gear: Redémarrer le service Suricata pour prendre en compte ls modif :  
 `sudo systemctl restart suricata`  
 
+#### Ajout de la config à `/var/ossec/etc/ossec.conf`, qui permettra à Wazuh agent de lire le fichier de journaux Suricata :
 
+```ini
+<ossec_config>
+  <localfile>
+    <log_format>json</log_format>
+    <location>/var/log/suricata/eve.json</location>
+  </localfile>
+</ossec_config>
+```
 
-
+> :bulb: On redémarre l'agent pour la prise en compte des modif :  
+`sudo systemctl restart wazuh-agent` : le service doit être running  
 
 
 
