@@ -249,7 +249,29 @@ Puis redémarrer l'agent Wazuh...
 ---
 
 ## 🔵 Détection de tentatives d'injection SQL
+> :bulb: Côté client, vérifier que Apache2 ets bien installé ✅:  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 230408.png>)
 
+> ✅ Apache2 tourne :  
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 230646.png>)
+
+
+> :gear: Dans `/var/ossec/etc/ossec.conf`, ajouter les lignes ci dessous pour surveiller les journaux d'accès du serveur Apache  
+```ini
+<ossec_config>
+  <localfile>
+    <log_format>apache</log_format>
+    <location>/var/log/apache2/access.log</location>
+  </localfile>
+</ossec_config>
+```
+> :gear: Redémarrer l'agent Wazuh...
+
+> :gear: sur l'attaquant : `curl -XGET "http://<UBUNTU_IP>/users/?id=SELECT+*+FROM+users";`  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 232036.png>)
+
+> ✅ Je vois la requête de l'ataquant sur le dashboard :  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-26 231912.png>)  
 
 
 ---
