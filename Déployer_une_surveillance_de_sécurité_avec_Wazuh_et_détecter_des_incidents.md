@@ -196,6 +196,14 @@ Dans le bloc \<syscheck> :
 
 ## 🔵 Détection d'attaques bruteforce
 
+> :bulb: Sur la machine cliente ciblée il faut un serveur SSH activé 
+> ![alt text](image-7.png)
+
+
+
+
+
+
 
 
 
@@ -209,4 +217,3 @@ Dans le bloc \<syscheck> :
 ## Rapport d’analyse des incidents détectés
 ## Rapport de tests des différents cas d’usage
 ## Procédure de déploiement et d’exploitation
-
