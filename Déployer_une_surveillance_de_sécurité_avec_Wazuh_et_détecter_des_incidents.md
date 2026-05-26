@@ -27,8 +27,9 @@
 `sudo apt update`  
 
 
-
 #### ✅ L'installation du SIEM Wazuh est terminée, nous pouvons passer à l'installation de l'agent sur les endpoints pour surveiller leur activité 😹.  
+
+---
 
 ## 🔵 Installation Wazuh agent
 > :gear: L'agent Wazuh est important sur les machines clientes, c'est lui qui va permettre de faire remonter les logs vers le serveur Wazuh.  
@@ -86,6 +87,8 @@ sed -i "s/^deb/#deb/" /etc/apt/sources.list.d/wazuh.list
 apt-get update
 echo "wazuh-agent hold" | dpkg --set-selections
 ```
+
+---
 
 ## 🔵 Installation NIDS Suricata  
 > :gear: J'installe l'agent Suricata sur la VM cliente Kali qui contient l'agent Wazuh.    
@@ -153,7 +156,7 @@ On lance des pings depuis le serveur vers le client : `ping 192.168.1.145` :
 Sur le Dashboard on voit les paquets ICMP dans les journaux d'évènements  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-26 163901.png>)  
 
-
+---
 
 ## 🔵 Surveillance de l'intégrité de répertoires/fichiers sensibles :  
 > :gear: Pour configurer l'agent Wazuh afin qu'il surveille les modifications du système de fichiers dans le répertoire :  
@@ -185,12 +188,19 @@ Dans le bloc \<syscheck> :
 
 
 
-> ✅ Sur le dashboard, les logs apparaissent bien  
+> ✅ Sur le dashboard, les logs de création, modif et suppression apparaissent bien  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 182459.png>)
 
 
+---
+
+## 🔵 Détection d'attaques bruteforce
 
 
+
+
+
+---
 
 ## Schéma de l’architecture de supervision
 ## Documentation d’installation et de configuration de Wazuh
