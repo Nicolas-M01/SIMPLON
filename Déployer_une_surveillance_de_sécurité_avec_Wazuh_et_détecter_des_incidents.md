@@ -221,7 +221,73 @@ Dans le bloc \<syscheck> :
 
 ## 🔵 Détection de processus non autorisés
 
+> :gear: Ajout du bloc qui permet d'obtenir périodiquement la liste des processus en cours d'exécution dans `/var/ossec/etc/ossec.conf` :  
+```ini
+<ossec_config>
+  <localfile>
+    <log_format>full_command</log_format>
+    <alias>process list</alias>
+    <command>ps -e -o pid,uname,command</command>
+    <frequency>30</frequency>
+  </localfile>
+</ossec_config>
+```
+Puis redémarrer l'agent Wazuh...
 
+
+> :bulb: Sur la machine cliente j'installe (ou je vérifie qu'ils le sont...) "netcat" et "nmap" qui servent respectivement à des ports en TCP/UDP et à écouter les ports ouverts sur un réseau.  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 223103.png>)
+
+> :gear: Côté serveur Wazuh, dans `/var/ossec/etc/rules/local_rules.xml`, pour créer une règle qui se déclenche à chaque lancement du programme Netcat :  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 224801.png>)  
+
+> :gear: Sur le client je lance le port 8000 en écoute : `nc -l 8000`  
+
+> ✅ Sur le serveur je peux voir l'évènement du port en écoute :  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 225225.png>)
+
+---
+
+## 🔵 Détection de tentatives d'injection SQL
+
+
+
+---
+
+## 🔵 Détection de cheval de troie
+
+
+
+
+---
+
+## 🔵 Traitement de malware à travers l'intégration de VirusTotal
+
+
+
+---
+
+## 🔵 Détection de vulnérabilités
+
+
+
+---
+
+## 🔵 Détection de processus cachés par rootkit
+
+
+
+
+---
+
+## 🔵 Détection de commandes malveillantes
+
+
+
+
+---
+
+## 🔵 Détection d'attaques shellshock
 
 
 ---
