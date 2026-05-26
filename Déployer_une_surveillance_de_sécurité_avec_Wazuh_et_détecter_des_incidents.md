@@ -197,14 +197,24 @@ Dans le bloc \<syscheck> :
 
 ## 🔵 Détection d'attaques bruteforce
 
+### Configuration
+
 > :bulb: Sur la machine cliente ciblée il faut un serveur SSH activé 
-> 
+> ![alt text](image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/blabla.png)
+
+> :bulb: Côté attaquant, Hydra est déjà installé.   
 
 
+### Émulation d'attaque
+> :gear: Créez un fichier texte contenant 10 mots de passe aléatoires  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 192929.png>)
+
+> :gear: Côté attaquant je lance le bruteforce avec  passwords aléatoires  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 193718.png>)
 
 
-
-
+> ✅ Côté serveur, je vois les logs :  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 193633.png>)
 
 
 
