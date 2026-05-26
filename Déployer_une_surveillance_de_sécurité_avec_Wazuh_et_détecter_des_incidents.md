@@ -1,7 +1,8 @@
 ## Installation et configuration de Wazuh  
 
 > #### :bulb: Voici les recommandations matérielles pour faire tourner Wazuh :
-![alt text](image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/image-7.png)
+
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 111641.png>)
 
 ### 🔵 Installation OS 
 >✅ J'ai installé **Ubuntu 24.04** avec GUI qui fait partie des OS recommandés avec une carte en bridge.  
@@ -14,7 +15,7 @@
 `curl -sO https://packages.wazuh.com/4.14/wazuh-install.sh && sudo bash ./wazuh-install.sh -a`  
 
 > :bulb: A la fin de l'installation le username et un password fort sont générés automatiquement.  
-> ![alt text](image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/image-8.png)  
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 115039.png>)
 
 
 > :bulb: Je peux ensuite me connecter avec l'interface Web : **`127.0.0.1`** et me connecter 
@@ -197,7 +198,7 @@ Dans le bloc \<syscheck> :
 ## 🔵 Détection d'attaques bruteforce
 
 > :bulb: Sur la machine cliente ciblée il faut un serveur SSH activé 
-> ![alt text](image-7.png)
+> 
 
 
 
