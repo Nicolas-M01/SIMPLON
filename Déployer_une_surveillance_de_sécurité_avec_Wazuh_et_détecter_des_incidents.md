@@ -3,7 +3,7 @@
 > #### :bulb: Voici les recommandations matérielles pour faire tourner Wazuh :
 ![alt text](image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/image-7.png)
 
-### Installation OS 
+### 🔵 Installation OS 
 >✅ J'ai installé **Ubuntu 24.04** avec GUI qui fait partie des OS recommandés avec une carte en bridge.  
 
 >✅ Je mets à jour la liste des paquets et je mets à jour ensuite le système
@@ -30,7 +30,7 @@
 
 #### ✅ L'installation du SIEM Wazuh est terminée, nous pouvons passer à l'installation de l'agent sur les endpoints pour surveiller leur activité 😹.  
 
-## Installation Wazuh agent
+## 🔵 Installation Wazuh agent
 > :gear: L'agent Wazuh est important sur les machines clientes, c'est lui qui va permettre de faire remonter les logs vers le serveur Wazuh.  
 
 ```bash
@@ -87,7 +87,7 @@ apt-get update
 echo "wazuh-agent hold" | dpkg --set-selections
 ```
 
-## Installation NIDS Suricata  
+## 🔵 Installation NIDS Suricata  
 > :gear: J'installe l'agent Suricata sur la VM cliente Kali qui contient l'agent Wazuh.    
 
 ```bash
@@ -149,9 +149,44 @@ af-packet:
 
 
 ### Émulation d'attaque
-On lance des pings depuis le serveur vers le client : `ping 192.168.1.145`  
+On lance des pings depuis le serveur vers le client : `ping 192.168.1.145` :  
 Sur le Dashboard on voit les paquets ICMP dans les journaux d'évènements  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-26 163901.png>)  
+
+
+
+## 🔵 Surveillance de l'intégrité de répertoires/fichiers sensibles :  
+> :gear: Pour configurer l'agent Wazuh afin qu'il surveille les modifications du système de fichiers dans le répertoire :  
+
+>**:bulb: Adaptation pour Kali qui ne fonctionne pas comme Ubuntu pour les agents...**  
+```bash
+# 1. Installer auditd (requis pour whodata)
+sudo apt install -y auditd
+sudo systemctl start auditd
+sudo systemctl enable auditd
+```
+
+Modifier : `/var/ossec/etc/ossec.conf` pour ajouter :  
+Dans le bloc \<syscheck> :  
+`<directories check_all="yes" report_changes="yes" whodata="yes">/root</directories>`  
+
+Dans le bloc \<syscheck> :  
+`<frequency>5</frequency>` pour update toutes les 5 secondes  
+
+`sudo systemctl restart wazuh-agent`  
+
+
+> :gear: Création dans la racine d'un fichier, modif et suppression :  
+>```bash
+>touch /root/test.txt
+>nano /root/test.txt
+>rm /root/test.txt
+>```
+
+
+
+> ✅ Sur le dashboard, les logs apparaissent bien  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 182459.png>)
 
 
 
