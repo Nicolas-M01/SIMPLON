@@ -396,14 +396,22 @@ exit 0;
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-27 111631.png>)
 
 
-
-
-
-
-
 ---
 
 ## 🔵 Détection de vulnérabilités
+
+#### Côté serveur  
+> :gear: La détection des vulnérabilités est bien activée dans `/var/ossec/etc/ossec.conf`  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 112957.png>)
+
+
+> :bulb: Redémarrer service...
+
+> :gear: Réduction du temps nécessaire de détection de vuln dans `/var/ossec/etc/ossec.conf` de 1H à 10mn  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 113740.png>)
+
+
+
 
 
 
