@@ -270,7 +270,7 @@ Puis redémarrer l'agent Wazuh...
 > :gear: sur l'attaquant : `curl -XGET "http://<UBUNTU_IP>/users/?id=SELECT+*+FROM+users";`  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 232036.png>)
 
-> ✅ Je vois la requête de l'ataquant sur le dashboard :  
+> ✅ Je vois la requête de l'attaquant sur le dashboard :  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-26 231912.png>)  
 
 
@@ -278,8 +278,24 @@ Puis redémarrer l'agent Wazuh...
 
 ## 🔵 Détection de cheval de troie
 
+> :gear: Paramétrage du fichier `/var/ossec/etc/ossec.conf` sur le client :
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 095232.png>)
+
+> :gear: Puis `sudo cp -p /usr/bin/w /usr/bin/w.copy` pour copier le fichier binaire du système puis remplacer système d'origine /usr/bin/w par le script shell suivant :  
+```bash
+sudo tee /usr/bin/w << EOF
+!/bin/bash
+echo "`date` this is evil" > /tmp/trojan_created_file
+echo 'test for /usr/bin/w trojaned file' >> /tmp/trojan_created_file
+Now running original binary
+/usr/bin/w.copy
+EOF
+```
+Redémarrer le service Wazuh-agent... 
 
 
+> ✅ Je vois la détection d'anomalies et de logiciels malveillants sur le dashboard :  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 094822.png>)
 
 ---
 
