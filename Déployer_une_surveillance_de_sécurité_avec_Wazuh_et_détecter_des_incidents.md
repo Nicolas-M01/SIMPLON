@@ -453,7 +453,37 @@ Puis décharger
 
 ## 🔵 Détection de commandes malveillantes
 
-####
+#### Côté client
+
+> :gear: auditd est installé
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 150729.png>)
+
+> :gear: Ajouter les règles d'audit au `/etc/audit/audit.rules`, puis rechargement des règles et vérif qu'elles sont en place :    
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-27 152738.png>)
+> ✅ Elles sont bien là
+
+> :gear: Ajout de la conf dans `/var/ossec/etc/ossec.conf` qui permet à Wazuh agent de lire le fichier de journaux auditd : 
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 153346.png>)
+Redémarrer service ....  
+
+
+
+#### Côté serveur
+> :bulb: Les paires clé-valeur sont bien présentes dans le fichier de recherche
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 155405.png>)
+
+> :gear: Création de la liste CDB `/var/ossec/etc/lists/suspicious-programs` avec :  
+```bash
+ncat:yellow
+nc:red
+tcpdump:orange
+```
+
+> :gear: J'ajoute la liste "suspicious-programs" à la <ruleset> dans `/var/ossec/etc/ossec.conf` :
+> `<list>etc/lists/suspicious-programs</list>` :  
+
+
+
 
 
 ---
