@@ -444,6 +444,11 @@ exit 0;
 > **✅ Les alertes concernant le Rootkit remontent ✅**  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-27 144203.png>)
 
+> :bulb: Pour décharger le rootkit il faut le rendre visible  
+`kill -63 0`  
+Puis décharger  
+`sudo rmmod diamorphine`  
+
 ---
 
 ## 🔵 Détection de commandes malveillantes
