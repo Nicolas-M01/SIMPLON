@@ -384,6 +384,23 @@ exit 0;
 > :gear: Ajouter ce bloc dans <ossec_config> pour activer automatiquement le script "remove-threat" lorsque VirusTotal détecte un fichier malveillant  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 105935.png>)
 
+> :gear: Recevoir des alertes concernant les résultats de la réponse active, dans `/var/ossec/etc/rules/local_rules.xml`, ajouter :  
+>  ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 110724.png>)  
+
+> :bulb: Redémarrer service.  
+
+> :gear: Télécharger fichier depuis la cible dans /root  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 111856.png>)
+
+> ✅ Je vois les alertes dans mon Dashboard avec les bons filtres  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-27 111631.png>)
+
+
+
+
+
+
+
 ---
 
 ## 🔵 Détection de vulnérabilités
