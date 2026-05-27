@@ -486,8 +486,11 @@ tcpdump:orange
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 161147.png>)
 Redémarrer service Wazuh ensuite...  
 
+#### Emulation d'attaque
+> :gear: J'installe Netcat sur la machine cliente, ici version openBSD 
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 162609.png>)
 
-> ✅ On voit bien les alertes sur le Dashboard lorsque j'installe et lance "Netcat" sur la machine cliente  
+> ✅ On voit bien les alertes sur le Dashboard du serveur Wazuh lorsque j'installe et lance "Netcat" sur la machine cliente  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 162118.png>)
 
 
