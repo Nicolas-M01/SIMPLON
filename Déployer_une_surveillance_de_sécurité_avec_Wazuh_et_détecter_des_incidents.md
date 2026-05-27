@@ -428,14 +428,14 @@ exit 0;
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 123539.png>)
 
 > :gear: Config dans `/var/ossec/etc/ossec.conf` pour que l'agent Wazuh exécute des analyses rootcheck toutes les 2mn (au lieu de 12H)  
-> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 124251.png>)
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 124251.png>)  
 
 > :bulb: Redémarrer service...  
 
-> :gear: Installation de Diamorphine depuis le dépôt officiel `git clone https://github.com/m0nad/Diamorphine`
+> :gear: Installation de Diamorphine depuis le dépôt officiel `git clone https://github.com/m0nad/Diamorphine`  
 > Puis je vérifie que le rootkit est bien activé. Il tourne en tâche de fond et est peu visible (il faut faire un kill sur PID 63 pour le rendre visible) :
-> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-27 141859.png>)
-> ✅ Le rootkit est actif ✅
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-27 141859.png>)  
+> ✅ Le rootkit est actif ✅  
 
 > :gear: Je vois le processus "journald" actif (journald pour Kali). Puis je "kill -31 +PID de journald", ce qui le rend invisible.
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 142957.png>)
@@ -496,7 +496,28 @@ Redémarrer service Wazuh ensuite...
 
 ---
 
-## 🔵 Détection d'attaques shellshock
+## 🔵 Détection d'attaques Shellshock
+
+#### Côté client
+
+> :bulb: le serveur apache est déjà installé
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 164111.png>)  
+
+> :gear: Dans le fichier de conf de l'agent Wazuh `/var/ossec/etc/ossec.conf`, j'ajoute un bloc de code pour qu'il surveilles les Logs d'accès à Apache   
+```ini
+<localfile>
+    <log_format>syslog</log_format>
+    <location>/var/log/apache2/access.log</location>
+</localfile>
+```
+Redémarrer agent Wazuh...  
+
+#### Emulation de l'attaque
+
+> :gear: Sur la machine attaquante je lance ma requête Web avec curl pour l'attaque Shellshock en indiquant l'IP du serveur Web (machine cliente)  
+> `sudo curl -H "User-Agent: () { :; }; /bin/cat /etc/passwd" 192.168.1.145`  
+> ✅ Les logs de l'attaque remontent bien dans le Dashboard du serveur Wazuh
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 165224.png>)
 
 
 ---
