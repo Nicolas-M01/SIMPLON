@@ -301,6 +301,7 @@ Redémarrer le service Wazuh-agent...
 
 ## 🔵 Traitement de malware à travers l'intégration de VirusTotal
 
+#### Côté client
 
 > :gear: Dans `/var/ossec/etc/ossec.conf`, dans bloc `<syscheck>` ajouter la ligne :  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 100451.png>)
@@ -353,6 +354,35 @@ exit 0;
 > :gear: Je modifie les droits et la propriété pour obtenir :  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 100914.png>)
 
+
+#### Côté serveur  
+
+> :gear: `/var/ossec/etc/rules/local_rules.xml`, ces règles permettent de signaler les modifications apportées au /rootrépertoire et détectées par les analyses FIM :  
+```ini
+<group name="syscheck,pci_dss_11.5,nist_800_53_SI.7,">
+    <!-- Rules for Linux systems -->
+    <rule id="100200" level="7">
+        <if_sid>550</if_sid>
+        <field name="file">/root</field>
+        <description>File modified in /root directory.</description>
+    </rule>
+    <rule id="100201" level="7">
+        <if_sid>554</if_sid>
+        <field name="file">/root</field>
+        <description>File added to /root directory.</description>
+    </rule>
+</group>
+```
+
+
+> :gear: Création d'un compte sur VirusTotal et récupération de l'API
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 105015.png>)
+
+> :gear: Dans `/var/ossec/etc/ossec.conf`, pour activer l'intégration VirusTotal
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 105543.png>)
+
+> :gear: Ajouter ce bloc dans <ossec_config> pour activer automatiquement le script "remove-threat" lorsque VirusTotal détecte un fichier malveillant  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 105935.png>)
 
 ---
 
