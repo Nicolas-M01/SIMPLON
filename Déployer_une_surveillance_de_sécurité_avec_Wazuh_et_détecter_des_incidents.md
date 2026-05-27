@@ -412,15 +412,37 @@ exit 0;
 
 
 
-
+> ✅ Visualisation dans la détection des vulnérabilités, des CVE de la machine cliente
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 115908.png>)
 
 
 ---
 
 ## 🔵 Détection de processus cachés par rootkit
 
+#### Côté client 
+> :gear: Le noyau est à jour en root  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 123757.png>)
+
+> :gear: Installation de `gcc` et `git`  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 123539.png>)
+
+> :gear: Config dans `/var/ossec/etc/ossec.conf` pour que l'agent Wazuh exécute des analyses rootcheck toutes les 2mn (au lieu de 12H)  
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 124251.png>)
+
+> :bulb: Redémarrer service...  
+
+> :gear: Installation de Diamorphine depuis le dépôt officiel `git clone https://github.com/m0nad/Diamorphine`
+> Puis je vérifie que le rootkit est bien activé. Il tourne en tâche de fond et est peu visible (il faut faire un kill sur PID 63 pour le rendre visible) :
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-27 141859.png>)
+> ✅ Le rootkit est actif ✅
+
+> :gear: Je vois le processus "journald" actif (journald pour Kali). Puis je "kill -31 +PID de journald", ce qui le rend invisible.
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 142957.png>)
 
 
+> **✅ Les alertes concernant le Rootkit remontent ✅**  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-27 144203.png>)
 
 ---
 
