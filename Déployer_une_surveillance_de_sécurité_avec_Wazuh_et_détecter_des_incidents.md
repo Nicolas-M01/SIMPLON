@@ -1,5 +1,10 @@
 ## Installation et configuration de Wazuh  
 
+### Schéma de l'Infrastucture
+
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/SIEM Wazuh.drawio (1).png>)
+
+
 > #### :bulb: Voici les recommandations matérielles pour faire tourner Wazuh :
 
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 111641.png>)
