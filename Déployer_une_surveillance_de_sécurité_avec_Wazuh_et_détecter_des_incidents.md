@@ -224,6 +224,8 @@ Je redémarre l'agent Wazuh en PowerShell avec la commande `Restart-Service -Nam
 
 ## 🔵 Détection d'attaques bruteforce
 
+### Sur client Linux 
+
 ### Configuration
 
 > :bulb: Sur la machine cliente ciblée il faut un serveur SSH activé 
@@ -243,6 +245,19 @@ Je redémarre l'agent Wazuh en PowerShell avec la commande `Restart-Service -Nam
 > ✅ Côté serveur, je vois les logs :  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 193633.png>)
 
+
+### Sur client Windows
+
+> :gear: Je vérife que le service bureau à distance est bien activé :
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 120339.png>)
+
+
+> :gear: Je lance l'attaque depuis la machine attaquante avec hydra. J'ai intégré le bon mot de passe dans la liste et réduit la vitesse pour ne pas être refusé par le RDP, grâce à "t -4"
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 121506.png>)
+
+
+> ✅ Je vois bien sur le Dashboard les logs de connexion et la connexion avec succès  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 122129.png>)
 
 ---
 
