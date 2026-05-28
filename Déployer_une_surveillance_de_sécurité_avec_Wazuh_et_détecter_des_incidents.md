@@ -35,6 +35,7 @@
 ## 🔵 Installation Wazuh agent
 > :gear: L'agent Wazuh est important sur les machines clientes, c'est lui qui va permettre de faire remonter les logs vers le serveur Wazuh.  
 
+### Agent machine Linux
 ```bash
 # Prérequis
 sudo apt install -y gnupg apt-transport-https
@@ -89,10 +90,22 @@ apt-get update
 echo "wazuh-agent hold" | dpkg --set-selections
 ```
 
+### Agent machine Windows
+
+> :bulb: Je passe par l'installation en mode graphique, avec droits admin, je télécharge l'exécutable et je l'installe
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-28 094625.png>)
+
+> :gear: Je rentre l'IP du serveur dans "Manager IP"
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 101752.png>)
+
+> ✅ Sur le serveur Wazuh dans les endpoints connectés je vois ma machine Windows :  
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 110234.png>)
+
+
 ---
 
 ## 🔵 Installation NIDS Suricata  
-> :gear: J'installe l'agent Suricata sur la VM cliente Kali qui contient l'agent Wazuh.    
+> :gear: J'installe l'agent Suricata sur la VM cliente Kali qui contient l'agent Wazuh.  
 
 ```bash
 # 1. Installer le paquet nécessaire pour add-apt-repository (inutile au final, mais nécessaire pour diagnostiquer)
@@ -162,6 +175,8 @@ Sur le Dashboard on voit les paquets ICMP dans les journaux d'évènements
 ## 🔵 Surveillance de l'intégrité de répertoires/fichiers sensibles :  
 > :gear: Pour configurer l'agent Wazuh afin qu'il surveille les modifications du système de fichiers dans le répertoire :  
 
+### Sur Client Linux
+
 >**:bulb: Adaptation pour Kali qui ne fonctionne pas comme Ubuntu pour les agents...**  
 ```bash
 # 1. Installer auditd (requis pour whodata)
@@ -191,6 +206,18 @@ Dans le bloc \<syscheck> :
 
 > ✅ Sur le dashboard, les logs de création, modif et suppression apparaissent bien  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 182459.png>)
+
+
+### Sur client Windows
+
+> :gear: Dans `C:\Program Files (x86)\ossec-agent\ossec.conf`, je rajoute une ligne spécifique dans le bloc `<syscheck>` pour monitorer le "Bureau" de l'administrateur :  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 115200.png>)
+Je redémarre l'agent Wazuh en PowerShell avec la commande `Restart-Service -Name wazuh`  
+
+> :gear: Je crée un fichier texte dans le chemin spécifié dans le fichier de conf (bureau de l'admin Win), je le modifie, puis je le supprime
+
+> ✅ Je vois sur le Dashboard, les actions réailsées sur le fichier  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 115445.png>)
 
 
 ---
