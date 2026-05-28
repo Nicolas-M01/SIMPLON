@@ -616,7 +616,18 @@ if __name__ == "__main__":
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 141534.png>)
 
 
+> :gear: Convertir le script python "remove-threat.py" en une appli exécutable Windows :  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-28 141725.png>)
+
+> ✅ Voici le chemin où se trouve l'exécutable  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 142625.png>)  
+
+> :gear: Déplacer fichier exécutable dans... :  
+> ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 142858.png>)
+
+
+
+> :bulb: Redémarrer Wazuh `Restart-Service -Name wazuh`
 
 ---
 
