@@ -636,7 +636,21 @@ if __name__ == "__main__":
 > : Dans `/var/ossec/etc/ossec.conf`, dans bloc `<ossec_config>`activer la réponse active et déclenche `remove-threat.exe` lorsque la requête VirusTotal renvoie des correspondances positives pour des menaces :
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 143916.png>)
 
+> :gear: Afin de recevoir des alertes dans le dashboard Wazuh Server après exécution de la réponse active, il faut rajouter dans `/var/ossec/etc/rules/local_rules.xml` ce nouveau groupe name :  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 144408.png>)
 
+> :bulb: `sudo systemctl restart wazuh-manager`
+
+#### de nouveau sur le client...
+
+> :gear: Désactiver la protection des menaces en temps réel :  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 144851.png>)
+
+> :gear: Téléchargement du fichier malveillant "eicar.txt" et copie dans le dossier en surveillance de VirusTotal, càd "Downloads". Il sera détecté, loggé et supprimé par le script Python.  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 151550.png>)
+
+> ✅ Les logs de création et suppression auto du fichier sont bien présents  
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-28 151314.png>)  
 
 
 ---
