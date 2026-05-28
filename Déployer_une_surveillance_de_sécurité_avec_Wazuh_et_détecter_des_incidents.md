@@ -626,8 +626,18 @@ if __name__ == "__main__":
 > ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 142858.png>)
 
 
+> :bulb: Redémarrer Wazuh `Restart-Service -Name wazuh`  
 
-> :bulb: Redémarrer Wazuh `Restart-Service -Name wazuh`
+
+#### Côté Serveur Wazuh (pour Windows")  
+
+> :bulb: Dans `/var/ossec/etc/ossec.conf`, ajoutez la clé de l'API VirusTotal comme pour la parite Linux (voir au dessus)...
+
+> : Dans `/var/ossec/etc/ossec.conf`, dans bloc `<ossec_config>`activer la réponse active et déclenche `remove-threat.exe` lorsque la requête VirusTotal renvoie des correspondances positives pour des menaces :
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 143916.png>)
+
+
+
 
 ---
 
