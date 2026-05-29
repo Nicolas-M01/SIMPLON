@@ -123,7 +123,8 @@ echo "wazuh-agent hold" | dpkg --set-selections
 
 ---
 
-## 🔵 Installation NIDS Suricata  
+<details>
+<summary><h2> 🔵 Installation NIDS Suricata <h2></summary>  
 > :gear: J'installe l'agent Suricata sur la VM cliente Kali qui contient l'agent Wazuh.  
 
 ```bash
@@ -189,9 +190,13 @@ On lance des pings depuis le serveur vers le client : `ping 192.168.1.145` :
 Sur le Dashboard on voit les paquets ICMP dans les journaux d'évènements  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-26 163901.png>)  
 
+
+</details>
+
 ---
 
-## 🔵 Surveillance de l'intégrité de répertoires/fichiers sensibles :  
+<details>
+<summary><h2> 🔵 Surveillance de l'intégrité de répertoires/fichiers sensibles : <h2></summary>  
 > :gear: Pour configurer l'agent Wazuh afin qu'il surveille les modifications du système de fichiers dans le répertoire :  
 
 ### Sur Client Linux
@@ -238,10 +243,12 @@ Je redémarre l'agent Wazuh en PowerShell avec la commande `Restart-Service -Nam
 > ✅ Je vois sur le Dashboard, les actions réailsées sur le fichier  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 115445.png>)
 
+</details>
 
 ---
 
-## 🔵 Détection d'attaques bruteforce
+<details>
+<summary><h2> 🔵 Détection d'attaques bruteforce <h2></summary>
 
 ### Sur client Linux 
 
@@ -276,11 +283,16 @@ Je redémarre l'agent Wazuh en PowerShell avec la commande `Restart-Service -Nam
 
 
 > ✅ Je vois bien sur le Dashboard les logs de connexion et la connexion avec succès  
-![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 122129.png>)
+![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 122129.png>)  
+
+
+</details>
 
 ---
 
-## 🔵 Détection de processus non autorisés
+<details>
+
+<summary><h2> 🔵 Détection de processus non autorisés <h2></summary>
 
 > :gear: Ajout du bloc qui permet d'obtenir périodiquement la liste des processus en cours d'exécution dans `/var/ossec/etc/ossec.conf` :  
 ```ini
@@ -307,9 +319,12 @@ Puis redémarrer l'agent Wazuh...
 > ✅ Sur le serveur je peux voir l'évènement du port en écoute :  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 225225.png>)
 
+</details>
+
 ---
 
-## 🔵 Détection de tentatives d'injection SQL
+<details>
+<summary><h2> 🔵 Détection de tentatives d'injection SQL <h2></summary>
 > :bulb: Côté client, vérifier que Apache2 ets bien installé ✅:  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 230408.png>)
 
@@ -334,10 +349,12 @@ Puis redémarrer l'agent Wazuh...
 > ✅ Je vois la requête de l'attaquant sur le dashboard :  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-26 231912.png>)  
 
+</details>
 
 ---
 
-## 🔵 Détection de cheval de troie
+<details>
+<summary><h2> 🔵 Détection de cheval de troie <h2></summary>
 
 > :gear: Paramétrage du fichier `/var/ossec/etc/ossec.conf` sur le client :
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 095232.png>)
@@ -358,9 +375,12 @@ Redémarrer le service Wazuh-agent...
 > ✅ Je vois la détection d'anomalies et de logiciels malveillants sur le dashboard :  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 094822.png>)
 
+</details>
+
 ---
 
-## 🔵 Traitement de malware à travers l'intégration de VirusTotal
+<details>
+<summary><h2> 🔵 Traitement de malware à travers l'intégration de VirusTotal <h2></summary>
 
 ### Sur client Linux
 #### Côté client
@@ -671,10 +691,12 @@ if __name__ == "__main__":
 > ✅ Les logs de création et suppression auto du fichier sont bien présents  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d’écran 2026-05-28 151314.png>)  
 
+</details>
 
 ---
 
-## 🔵 Détection de vulnérabilités
+<details>
+<summary><h2> 🔵 Détection de vulnérabilités <h2></summary>
 
 #### Côté serveur  
 > :gear: La détection des vulnérabilités est bien activée dans `/var/ossec/etc/ossec.conf`  
@@ -691,10 +713,12 @@ if __name__ == "__main__":
 > ✅ Visualisation dans la détection des vulnérabilités, des CVE de la machine cliente
 > ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 115908.png>)
 
+</details>
 
 ---
 
-## 🔵 Détection de processus cachés par rootkit
+<details>
+<summary><h2> 🔵 Détection de processus cachés par rootkit <h2></summary>
 
 #### Côté client 
 > :gear: Le noyau est à jour en root  
@@ -725,9 +749,12 @@ if __name__ == "__main__":
 Puis décharger  
 `sudo rmmod diamorphine`  
 
+</details>
+
 ---
 
-## 🔵 Détection de commandes malveillantes
+<details>
+<summary><h2> 🔵 Détection de commandes malveillantes <h2></summary>
 
 #### Côté client
 
@@ -769,10 +796,12 @@ Redémarrer service Wazuh ensuite...
 > ✅ On voit bien les alertes sur le Dashboard du serveur Wazuh lorsque j'installe et lance "Netcat" sur la machine cliente  
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 162118.png>)
 
+</details>
 
 ---
 
-## 🔵 Détection d'attaques Shellshock
+<details>
+<summary><h2> 🔵 Détection d'attaques Shellshock <h2></summary>
 
 #### Côté client
 
@@ -795,13 +824,8 @@ Redémarrer agent Wazuh...
 > ✅ Les logs de l'attaque remontent bien dans le Dashboard du serveur Wazuh
 > ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-27 165224.png>)
 
+</details>
 
 ---
 
-## Schéma de l’architecture de supervision
-## Documentation d’installation et de configuration de Wazuh
-## Captures d’écran du fonctionnement de la plateforme
-## Documentation des règles de détection configurées
-## Rapport d’analyse des incidents détectés
-## Rapport de tests des différents cas d’usage
-## Procédure de déploiement et d’exploitation
+
