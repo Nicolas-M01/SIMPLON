@@ -13,7 +13,7 @@
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 111641.png>)
 
 <details>
-<summary><h1> 🔵 Installation OS <h1></summary>  
+<summary><h2> 🔵 Installation OS <h2></summary>  
 
 
 >✅ J'ai installé **Ubuntu 24.04** avec GUI qui fait partie des OS recommandés avec une carte en bridge.  
