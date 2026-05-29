@@ -14,6 +14,7 @@
 
 <details>
 <summary><h1> 🔵 Installation OS </summary><h1>
+
 >✅ J'ai installé **Ubuntu 24.04** avec GUI qui fait partie des OS recommandés avec une carte en bridge.  
 
 >✅ Je mets à jour la liste des paquets et je mets à jour ensuite le système
