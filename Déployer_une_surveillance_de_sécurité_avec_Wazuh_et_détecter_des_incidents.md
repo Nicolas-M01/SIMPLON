@@ -13,12 +13,14 @@
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 111641.png>)
 
 <details>
-<summary><h1> 🔵 Installation OS </summary><h1>
+<summary><h1> 🔵 Installation OS <h1></summary>  
+
 
 >✅ J'ai installé **Ubuntu 24.04** avec GUI qui fait partie des OS recommandés avec une carte en bridge.  
 
 >✅ Je mets à jour la liste des paquets et je mets à jour ensuite le système
 `sudo apt update && sudo apt upgrade -y`  
+
 
 ### Installation Wazuh serveur
 >:gear: Installation de Wazuh avec curl (après instll de curl)  
