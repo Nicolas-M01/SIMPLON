@@ -5,11 +5,15 @@
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/SIEM Wazuh.drawio (1).png>)
 
 
+
+
+
 > #### :bulb: Voici les recommandations matérielles pour faire tourner Wazuh :
 
 ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-26 111641.png>)
 
-### 🔵 Installation OS 
+<details>
+<summary><h1> 🔵 Installation OS </summary><h1>
 >✅ J'ai installé **Ubuntu 24.04** avec GUI qui fait partie des OS recommandés avec une carte en bridge.  
 
 >✅ Je mets à jour la liste des paquets et je mets à jour ensuite le système
@@ -35,7 +39,11 @@
 
 #### ✅ L'installation du SIEM Wazuh est terminée, nous pouvons passer à l'installation de l'agent sur les endpoints pour surveiller leur activité 😹.  
 
+
+</details>
+
 ---
+
 
 ## 🔵 Installation Wazuh agent
 > :gear: L'agent Wazuh est important sur les machines clientes, c'est lui qui va permettre de faire remonter les logs vers le serveur Wazuh.  
