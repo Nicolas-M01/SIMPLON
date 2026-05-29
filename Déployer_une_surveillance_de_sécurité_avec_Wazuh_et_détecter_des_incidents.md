@@ -48,7 +48,9 @@
 ---
 
 
-## 🔵 Installation Wazuh agent
+<details>
+<summary><h2> 🔵 Installation Wazuh agent <h2></summary>
+
 > :gear: L'agent Wazuh est important sur les machines clientes, c'est lui qui va permettre de faire remonter les logs vers le serveur Wazuh.  
 
 ### Agent machine Linux
@@ -117,6 +119,7 @@ echo "wazuh-agent hold" | dpkg --set-selections
 > ✅ Sur le serveur Wazuh dans les endpoints connectés je vois ma machine Windows :  
 > ![alt text](<image/Déployer_une_surveillance_de_sécurité_avec_Wazuh_et_détecter_des_incidents/Capture d'écran 2026-05-28 110234.png>)
 
+</details>
 
 ---
 
